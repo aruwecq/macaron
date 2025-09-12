@@ -1,0 +1,8 @@
+@import '../shared/styles/variables.scss';
+@import '../shared/styles/globals.scss';
+
+.app {
+  min-height: 100vh;
+  background: $gradient-bg;
+  font-family: $font-primary;
+}

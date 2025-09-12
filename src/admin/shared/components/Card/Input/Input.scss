@@ -1,0 +1,61 @@
+@import '../../styles/variables.scss';
+
+.input-group {
+  margin-bottom: $spacing-4;
+}
+
+.input-label {
+  display: block;
+  margin-bottom: $spacing-2;
+  font-weight: 500;
+  color: $gray-700;
+  font-size: $font-size-sm;
+  
+  .required {
+    color: $error;
+    margin-left: $spacing-1;
+  }
+}
+
+.input {
+  width: 100%;
+  padding: $spacing-3 $spacing-4;
+  border: 2px solid $gray-200;
+  border-radius: $radius-lg;
+  background: $white;
+  font-size: $font-size-base;
+  color: $gray-800;
+  transition: all $transition-normal;
+  
+  &::placeholder {
+    color: $gray-400;
+  }
+  
+  &:focus {
+    border-color: $primary-pink;
+    box-shadow: 0 0 0 3px rgba(255, 182, 193, 0.1);
+    transform: translateY(-1px);
+  }
+  
+  &--error {
+    border-color: $error;
+    
+    &:focus {
+      border-color: $error;
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+    }
+  }
+  
+  &:disabled {
+    background: $gray-100;
+    color: $gray-500;
+    cursor: not-allowed;
+  }
+}
+
+.error-message {
+  display: block;
+  margin-top: $spacing-1;
+  font-size: $font-size-sm;
+  color: $error;
+}

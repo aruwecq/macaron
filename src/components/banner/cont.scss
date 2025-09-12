@@ -1,0 +1,218 @@
+.banner-cont {
+  width: 100%;
+  max-width: 1440px;
+  margin: 30px auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+
+  a {
+    width: 570px;
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    padding: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+    img {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      text-align: center;
+      transition: color 0.3s ease;
+    }
+
+    span {
+      font-size: 14px;
+      line-height: 1.4;
+      text-align: center;
+      transition: color 0.3s ease;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+
+      h1 { color: #d35400; }
+      span { color: #333; }
+      img { transform: scale(1.1); }
+    }
+  }
+
+  .cont1 {
+    background: linear-gradient(156deg, #f7ceb3 50%, #ffdbc3 50%);
+  }
+
+  .cont2 {
+    background: linear-gradient(24.5deg, #ffc2cc 50%, #ffd2d9 50%);
+  }
+
+  .cont3 {
+    background: linear-gradient(24.5deg, #baf4b9 50%, #a1f3a0 50%);
+  }
+
+  .cont4 {
+    background: linear-gradient(156deg, #fdc6bc 50%, #fab2a3 50%);
+  }
+
+  .cont5 {
+    background: linear-gradient(156deg, #baf0f3 50%, #b1e8eb 50%);
+  }
+
+  .cont6 {
+    background: linear-gradient(24.5deg, #cdcff7 50%, #babcee 50%);
+  }
+
+  @media (max-width: 1200px) {
+    a {
+      width: 45%;
+      height: auto;
+    }
+  }
+
+
+  @media (max-width: 768px) {
+    a {
+      width: 200px; height: 200px;
+      padding: 25px 15px;
+      // background: linear-gradient(156deg, #baf0f3 50%, #b1e8eb 50%);/
+      background: white;
+      img {
+        width: 60px;
+        height: 60px;
+      }
+
+      h1 {
+        font-size: 15px;
+      }
+
+      span {
+        font-size: 9px;
+      }
+    }
+  }
+}
+.sale-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.sale-product {
+  width: 270px;
+  height: 340px;
+  background: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  // background: #fff;
+  // border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(248, 8, 232, 0.2);
+  }
+
+  img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+  }
+
+  .sale-text {
+    width: 100%;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    text-align: center;
+    // border-top-left-radius: 10px;
+    // border-top-right-radius: 10px;
+
+    span {
+      font-weight: 500;
+      color: #fff;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    &.blue {
+      background: linear-gradient(135deg, #8CC4EC, #6AADE0);
+    }
+
+    &.pink {
+      background: linear-gradient(135deg, #FF4D6D, #E63B5A);
+    }
+  }
+
+  .sale-new {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+     border-top-left-radius: 100px;
+    border-top-right-radius: 5px;
+
+    &.blue {
+      background: #8CC4EC;
+    }
+
+    &.pink {
+      background: #FF4D6D;
+    }
+  }
+}
+/* Заголовок и секция Акций */
+.sale-section {
+  margin: 80px auto;
+  text-align: center;
+  max-width: 1440px;
+
+  .sale-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #222;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 3px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, #FF4D6D, #8CC4EC);
+    }
+  }
+}
+.sale-product {
+  text-decoration: none;
+}

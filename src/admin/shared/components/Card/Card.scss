@@ -1,0 +1,30 @@
+@import '../styles/variables.scss';
+
+.card {
+  background: $gradient-card;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-md;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all $transition-normal;
+  
+  &--padding-sm {
+    padding: $spacing-3;
+  }
+  
+  &--padding-md {
+    padding: $spacing-6;
+  }
+  
+  &--padding-lg {
+    padding: $spacing-8;
+  }
+  
+  &--hover {
+    cursor: pointer;
+    
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: $shadow-xl;
+    }
+  }
+}

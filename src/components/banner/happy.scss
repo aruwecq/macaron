@@ -1,0 +1,72 @@
+.happy {
+    width: 1000px;
+    height: 250px;
+    box-sizing: border-box;
+  margin: 30px auto;
+  text-align: center;
+//   border: 1px solid red;
+  a{
+    text-decoration: none;
+  }
+  .images {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 60px;
+
+    .holiday-line {
+      position: absolute;
+      margin-top: 60px;
+      width: 900px;
+      border: 1px dashed #d35400;
+    }
+
+    .holiday-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+      margin-top: 30px;
+
+      .holiday-item,
+      .holiday-base {
+        width: 90px;
+        height: auto;
+        background: #fff;
+        border-radius: 50%;
+        transition: transform 0.3s ease;
+        position: relative;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+
+      .holiday-with-cape {
+        position: relative;
+
+        .holiday-cape {
+          position: absolute;
+          top: -43px;
+          left: 30px;
+          width: 60px;
+          z-index: 2;
+        }
+      }
+
+      /* подписи */
+      .holiday-text {
+        margin-top: 12px;
+        font-size: 14px;
+        line-height: 1.3;
+        color: #333;
+
+        span {
+          font-weight: bold;
+          color: #d35400;
+        }
+      }
+    }
+  }
+}
