@@ -6,40 +6,40 @@ import MainContent from "./admin/widgets/MainContent/MainContent";
 import ProductForm from "./admin/features/Products/ProductForm";
 import Products from "./admin/features/Products/Products";
 import DashboardPage from "./admin/features/pages/DashboardPage/DashboardPage";
-import Holydays from "./pages/category/Holydays/Holydays";
-import News from "./components/product/productNews/News";
+import Holydays from "./pages/category/Holydays";
+import Wholesale from "./pages/wholesale/Wholesale";
 const myRouter = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout />,
-    children: [
-      {
-        path: "",
-        element: <Home />,
-      },
-      {
-        path: "holydays",
-        element: <Holydays />,
-      },
-      {
-        path: "news",
-        element: <News />,
-      },
-    ],
-  },
-  {
-    path: "/",
-    element: <AdninLayout />,
-    children: [
-      {
-        path: "/admin",
-        element: <DashboardPage />,
-      },
-      {
-        path: "/products",
-        element: <Products />,
-      },
-    ],
-  },
-]);
-export default myRouter;
+    {
+        path: "/",
+        element: <Layout />,
+        children:[
+            {
+                path:"",
+                element:<Home/>
+            }, {
+                path:"holydays",
+                element:<Holydays/>
+            },{
+                path:"wholesale",
+                element: <Wholesale/>
+            },
+        
+        ],
+    },
+   {
+        path: "/",
+        element: <AdninLayout />,
+        children: [
+            {
+                path: "/admin",
+                element: <DashboardPage/>
+            },
+            {
+                path: "/products",
+                element: <Products />
+            },
+            
+        ]
+    }
+])
+export default myRouter

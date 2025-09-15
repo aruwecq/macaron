@@ -1,0 +1,101 @@
+.wholesale{
+    margin: 0;
+    padding: o;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+.wholesale-all {
+    text-align: center;
+    justify-content: center;
+   
+}
+.wholesale-logo{
+    padding: 40px 0;
+}
+.optom1{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 100px;
+}
+.optom-text1 h2{
+font-size: 37px;
+text-align: center;
+margin-bottom: 20px;
+}
+.optom-text1 p{
+    margin-top: 40px;
+    line-height: 23px;
+}
+.optom-text1 button{
+    margin-top: 30px;
+    width: 200px;
+    height: 60px;
+}
+.optom-logo2 {
+    text-align: center;
+}
+.optom-logo2 h3{
+    font-size: 27px;
+    padding: 20px 0;
+}
+.optom1-pages1{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+}
+.optom1-pages1 img{
+    width: 300px;
+}
+.optom1-pages1 h3{
+    padding: 15px 0;
+}
+.optom1-pages1 p{
+    line-height: 20px;
+    font-size: 12px;
+    padding-bottom: 40px;
+}
+.optom-pages2{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+}
+.optom-page2 img{
+    width: 300px;
+}
+.optom-page2 h3{
+    padding: 15px 0;
+}
+.optom-page2 p{
+    line-height: 20px;
+    font-size: 12px;
+    margin-bottom: 60px;
+}
+.optom-product h2{
+    text-align: center;
+    margin-bottom:60px ;
+   
+}
+.optom-icons{
+    display: flex;
+    justify-content: center;
+    gap: 180px;
+}
+.optom-icons div{
+    
+    width: 140px;
+    height: 140px;
+    background-color: #E2E2E2;
+    border-radius: 50%;
+}
+.optom-icons div img{
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.icon-optom p{
+    width: 300px;
+    padding-right: 80px;
+    padding-top: 10px;
+}   
