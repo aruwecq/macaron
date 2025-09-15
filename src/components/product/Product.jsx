@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './product.scss'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import ProductNews from './productNews/ProductNews'
 
 function Product() {
   const [products, setProducts] = useState([])
@@ -18,6 +19,8 @@ function Product() {
 
   return (
     <div className="product-list">
+      <div className='h1'>  <h1>Популярные наборы</h1></div>
+      <div className='list'>
       {products.slice(0, 6).map((item) => (   // <-- ограничиваем до 6
         <div key={item.id} className="product-card">
           <div className="product-image">
@@ -40,7 +43,9 @@ function Product() {
       ))}
       <Link style={{background:"aqua", textDecoration:"none", width:"250px",
         height:"50px" , textAlign:"center" , padding:"15px"
-      }} to="/ko">Все праздничные наборы</Link>
+      }} to="/holydays">Все праздничные наборы</Link>
+      <ProductNews/>
+      </div>
     </div>
   )
 }

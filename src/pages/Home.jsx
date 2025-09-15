@@ -3,6 +3,7 @@ import Banner from '../components/banner/Banner'
 import Cont from '../components/banner/Cont'
 import Happy from '../components/banner/Happy'
 import Product from '../components/product/Product'
+import ListIgmg from '../components/Listimg/ListIgmg'
 function Home() {
   return (
     <div>
@@ -11,6 +12,7 @@ function Home() {
       <Cont/>
       <Happy/>
       <Product/>
+      <ListIgmg/>
     </div>
   )
 }

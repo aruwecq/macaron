@@ -19,10 +19,10 @@ function Header() {
             <Link to="/wholesale">Оптовые поставки</Link>
             <Link to="/contacts">Контакты</Link>
             <Link to="/city" className="city">
-              Санкт-Петербург <IoLocationOutline className="icon" />
+              Бишкек <IoLocationOutline className="icon" />
             </Link>
             <div className="phone">
-              <IoIosPhonePortrait /> 8 812 309-82-88
+              <IoIosPhonePortrait /> <p>557 07 19 20</p>
             </div>
             <div className="icons">
               <Link className="icon-btn" to="/cart">
