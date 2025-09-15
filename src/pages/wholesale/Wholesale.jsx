@@ -78,7 +78,7 @@ function Wholesale() {
           <div className='optom-page2'>
                 <img src={oreshki} alt="" />
                 <h3>Орешки со сгущенкой</h3>
-                <p>Россыпью и индивидуальной упаковке</p>            
+                <p>Россыпью и индивидуальной упаковкtе</p>            
           </div>
           <div className='optom-page2'>
                 <img src={trubochki} alt="" />
