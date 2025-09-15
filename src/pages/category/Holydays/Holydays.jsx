@@ -5,18 +5,18 @@ import { Link } from 'react-router-dom'
 function Holydays() {
   return (
     <div className="holydays">
+      <div className='link'>
          <Link to="/">Главная страница</Link> »
       <Link to="/njm">Каталог десертов</Link> »
-      <p>Готовые наборы</p> 
+      <p>Готовые наборы</p>
+      </div> 
   <div className="breadcrumbs">
     <img
       src="https://macaronshop.ru/wp-content/uploads/2025/02/set_left21.png"
       alt="left"
       className="breadcrumbs__img-left"
     />
-
     <div className="breadcrumbs__content">
-   
       <h1>Подарочные наборы</h1>
       <p>Для сладких моментов вашей жизни</p>
     </div>
@@ -70,7 +70,7 @@ function Holydays() {
           <div className="holiday-card__overlay" />
           <h3 className="holiday-card__title">Подарки коллегам</h3>
         </Link>
-      </div>
+      </div>  
     </div>
   )
 }
