@@ -61,7 +61,7 @@ function Footer1() {
               </li>
             </ul>
 
-            <div className="footer-lang">
+            {/* <div className="footer-lang">
               <CiGlobe />
               <ul>
                 <li>
@@ -74,7 +74,7 @@ function Footer1() {
                   <a href="#">Eng</a>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </div>
 
           <div className="footer-sslk2">
@@ -123,6 +123,7 @@ function Footer1() {
             </div>
           </div>
         </div>
+
       </footer>
     </div>
   );
