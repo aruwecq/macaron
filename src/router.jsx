@@ -7,6 +7,7 @@ import ProductForm from "./admin/features/Products/ProductForm";
 import Products from "./admin/features/Products/Products";
 import DashboardPage from "./admin/features/pages/DashboardPage/DashboardPage";
 import Holydays from "./pages/category/Holydays";
+import Wholesale from "./pages/wholesale/Wholesale";
 const myRouter = createBrowserRouter([
     {
         path: "/",
@@ -18,6 +19,9 @@ const myRouter = createBrowserRouter([
             }, {
                 path:"holydays",
                 element:<Holydays/>
+            },{
+                path:"wholesale",
+                element: <Wholesale/>
             },
         
         ],

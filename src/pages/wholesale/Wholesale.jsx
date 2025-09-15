@@ -1,13 +1,24 @@
 import React from 'react'
 import "./wholesale.css"
-import optom from "../../../assets/images/optom.jpg"
-import macarons from "../../../assets/images/macarons1.png"
-import macarons2 from "../../../assets/images/macarons2.png"
-import cace from "../../../assets/images/cake-pops.png"
-import kartoshka from "../../../assets/images/kartoshka1.png"
-import oreshki from "../../../assets/images/oreshki.png"
-import trubochki from "../../../assets/images/trubochki.png"
-import macaroni from "../../../assets/images/macaroni.png"
+import optom from "../../assets/images/optom.jpg"
+import macarons from "../../assets/images/macarons1.png"
+import macarons2 from "../../assets/images/macarons2.png"
+import cace from "../../assets/images/cake-pops.png"
+import kartoshka from "../../assets/images/kartoshka1.png"
+import macaroni from "../../assets/images/macaroni.png"
+import oreshki from "../../assets/images/oreshki.png"
+import trubochki from "../../assets/images/trubochki.png"
+// import trubochki from "../../assets/images/macaroni.png"
+
+
+// import optom from "../../../assets/images/optom.jpg"
+// import macarons from "../../../assets/images/macarons1.png"
+// import macarons2 from "../../../assets/images/macarons2.png"
+// import cace from "../../../assets/images/cake-pops.png"
+// import kartoshka from "../../../assets/images/kartoshka1.png"
+// import oreshki from "../../../assets/images/oreshki.png"
+// import trubochki from "../../../assets/images/trubochki.png"
+// import macaroni from "../../../assets/images/macaroni.png"
 
 import { Link } from 'react-router-dom'
 function Wholesale() {
