@@ -1,6 +1,6 @@
 @import '../../shared/components/styles/variables.scss';
 
-.products {
+.products-admin {
   .products-header {
     display: flex;
     justify-content: space-between;
@@ -204,7 +204,7 @@
 }
 
 @media (max-width: $breakpoint-md) {
-  .products {
+  .products-admin {
     .products-header {
       flex-direction: column;
       gap: $spacing-4;

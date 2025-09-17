@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { IoIosPhonePortrait } from "react-icons/io";
 import { IoLocationOutline } from "react-icons/io5";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import { LiaShoppingBagSolid } from "react-icons/lia";
 import home from '../../assets/images/home.svg'
+import { FiUser } from "react-icons/fi";
 import "./Header.scss";
 
 function Header() {
@@ -26,9 +27,11 @@ function Header() {
             </div>
             <div className="icons">
               <Link className="icon-btn" to="/cart">
-                <AiOutlineShoppingCart />
-                <span className="qty">в корзине (4 товара)</span>
-              </Link>
+               <LiaShoppingBagSolid />
+              </Link> 
+              <Link to="/user" className="icon-btn">  
+              <FiUser />
+              </Link>   
             </div>
           </div>
         </div>
@@ -48,7 +51,7 @@ function Header() {
               <option value="/gifts/other">Прочее</option>
             </select>
 
-            <Link className="menu-link" to="/constructor">Собрать набор</Link>
+            <Link className="menu-link" to="/set">Собрать набор</Link>
           </nav>
 
           <Link className="logo" to="/dds">

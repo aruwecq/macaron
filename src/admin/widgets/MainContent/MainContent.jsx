@@ -6,11 +6,7 @@ import UsersSection from '../../features/Users/Users';
 import SettingsSection from '../../features/Settings/Settings';
 import './MainContent.scss';
 
-interface MainContentProps {
-  activeSection: string;
-}
-
-const MainContent: React.FC<MainContentProps> = ({ activeSection }) => {
+const MainContent = ({ activeSection }) => {
   const renderSection = () => {
     switch (activeSection) {
       case 'dashboard':
