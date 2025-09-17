@@ -1,0 +1,104 @@
+.design{
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+    max-width: 1440px;
+    background-color: #E2E2E2;
+    width: 1440px;
+
+}
+.design-all{
+    width: 1400px;
+    /* justify-content: center; */
+}
+.wholesale-logo{
+    text-align: center;
+}
+.wholesale-logo h2 {
+ margin-top: 20px;
+ font-size: 30px;
+}
+.design1{
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    margin-left: 40px;
+    margin-bottom: 80px;
+}
+.page-design1{
+    width: 300px;
+    height: 450px;
+    background-color: #fff;
+    text-align: center;
+}
+.page-design1 img{
+    width: 300px;
+    height: 350px;
+    margin-top: 20px;
+}
+.page-design1 h4{
+margin-top: 10px;
+color: red;
+}
+.page-design2{
+    width: 300px;
+    height: 450px;
+    background-color: #fff;
+    text-align: center;
+}
+.page-design2 img{
+    width: 290px;
+    height: 350px;
+    margin-top: 20px;
+}
+.page-design2 h4{
+margin-top: 10px;
+color: red;
+}
+.design-info {
+    width: 1200px;
+    margin: 0 auto 80px auto;
+    padding: 40px;
+    background-color: #E2E2E2;
+    border-radius: 10px;
+    line-height: 1.6;
+    color: #333;
+    font-size: 18px;
+}
+
+.design-info h2 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.design-info h3 {
+    font-size: 22px;
+    margin: 30px 0 15px 0;
+    color: #444;
+}
+
+.design-info p {
+    margin-bottom: 20px;
+}
+
+.design-info ul {
+    list-style: disc;
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+
+.design-info ol {
+    list-style: decimal;
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+
+.design-info li {
+    margin-bottom: 10px;
+}
+
+.design-info strong {
+    color: black;
+}

@@ -11,6 +11,9 @@ import News from "./components/product/productNews/News";
 import AssembleSet from "./components/assemble/assembleSet/AssembleSet";
 import { ImageOff } from "lucide-react";
 import SweetDiscount from "./components/assemble/sweetDiscount/SweetDiscount";
+// import Holydays from "./pages/category/Holydays";
+import Wholesale from "./pages/wholesale/Wholesale";
+import Design from "./pages/design/design";
 const myRouter = createBrowserRouter([
     {
         path: "/",
@@ -19,10 +22,17 @@ const myRouter = createBrowserRouter([
             {
                 path:"",
                 element:<Home/>
-            }, {
-                path:"holydays",
-                element:<Holydays/>
-            },{
+            },
+
+            {
+                path:"design",
+                element: <Design/>
+            },
+            // , {
+            //     path:"holydays",
+            //     element:<Holyday/>
+            // },
+            {
                 path:"wholesale",
                 element: <Wholesale/>
             },
