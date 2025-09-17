@@ -39,7 +39,7 @@ function Header() {
       <div className="main-nav">
         <div className="row">
           <nav className={`menu-left ${menuOpen ? "open" : ""}`}>
-            <Link className="menu-link" to="/sales">
+            <Link className="menu-link" to="/discount">
               Сладкие дни <span className="badge">%</span>
             </Link>
 

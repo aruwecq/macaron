@@ -9,6 +9,8 @@ import Wholesale from "./pages/wholesale/Wholesale";
 import ProductNews from "./components/product/productNews/ProductNews";
 import News from "./components/product/productNews/News";
 import AssembleSet from "./components/assemble/assembleSet/AssembleSet";
+import { ImageOff } from "lucide-react";
+import SweetDiscount from "./components/assemble/sweetDiscount/SweetDiscount";
 const myRouter = createBrowserRouter([
     {
         path: "/",
@@ -30,6 +32,9 @@ const myRouter = createBrowserRouter([
             }, {
                 path:"/set",
                 element:<AssembleSet/>
+            },{
+                path:"/discount",
+                element:<SweetDiscount/>
             },
         ],
     },
