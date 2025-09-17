@@ -9,6 +9,7 @@ import DashboardPage from "./admin/features/pages/DashboardPage/DashboardPage";
 // import Holydays from "./pages/category/Holydays";
 import Wholesale from "./pages/wholesale/Wholesale";
 import Design from "./pages/design/design";
+import Gallery from "./pages/design/style/Gallery";
 const myRouter = createBrowserRouter([
     {
         path: "/",
@@ -30,6 +31,10 @@ const myRouter = createBrowserRouter([
             {
                 path:"wholesale",
                 element: <Wholesale/>
+            },
+            {
+                path:"gallery",
+                element: <Gallery/>
             },
         
         ],
