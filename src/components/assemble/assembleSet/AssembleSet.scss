@@ -1,0 +1,139 @@
+.set{
+    width: 100%;
+    max-width: 1440px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+.link{
+    width: 500px;
+    // height: 30px;
+  display: flex;    
+//   margin: 0 400px;
+//   padding-top: 20px;
+//   border: 1px solid red;
+}   
+.link a{
+   text-decoration: none;
+   color:  #2ba7ea;
+   
+}
+.set {
+  padding: 20px;
+
+  .link {
+    margin-bottom: 20px;
+    font-size: 14px;
+
+    a {
+      color: #0077cc;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    p {
+      display: inline;
+      margin-left: 5px;
+      color: #555;
+    }
+  }
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.product-card {
+  width: 260px;
+  height: 380px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  background: #fff;
+  transition: all 0.3s ease;
+//   border: 1px solid red;
+  margin: 0 auto;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  }
+
+  img {
+    width: 229px;
+    height: 251px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    font-size: 16px;
+    margin: 8px 0;
+    color: #333;
+  }
+
+  .old {
+    display: block;
+    font-size: 14px;
+    color: gray;
+    text-decoration: line-through;
+    margin-bottom: 5px;
+  }
+
+  .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e63946;
+  }
+}
+
+.product-page {
+  max-width: 500px;
+  margin: 40px auto;
+  text-align: center;
+
+  img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #222;
+  }
+
+  .old {
+    font-size: 16px;
+    text-decoration: line-through;
+    color: gray;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #e63946;
+  }
+
+  a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #0077cc;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+.aa{
+    text-decoration: none;
+}

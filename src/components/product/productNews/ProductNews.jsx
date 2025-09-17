@@ -16,6 +16,8 @@ function ProductNews() {
         console.error("Ошибка при загрузке продуктов:", err)
       })
   }, [])
+  console.log(productsNews);
+  
 
   return (
     <div className="product-news">

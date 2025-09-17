@@ -2,10 +2,15 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import Home from "./pages/Home";
 import AdninLayout from "./admin/AdninLayout";
-import MainContent from "./admin/widgets/MainContent/MainContent";
-import ProductForm from "./admin/features/Products/ProductForm";
 import Products from "./admin/features/Products/Products";
 import DashboardPage from "./admin/features/pages/DashboardPage/DashboardPage";
+import Holydays from "./pages/category/Holydays/Holydays";
+import Wholesale from "./pages/wholesale/Wholesale";
+import ProductNews from "./components/product/productNews/ProductNews";
+import News from "./components/product/productNews/News";
+import AssembleSet from "./components/assemble/assembleSet/AssembleSet";
+import { ImageOff } from "lucide-react";
+import SweetDiscount from "./components/assemble/sweetDiscount/SweetDiscount";
 // import Holydays from "./pages/category/Holydays";
 import Wholesale from "./pages/wholesale/Wholesale";
 import Design from "./pages/design/design";
@@ -31,7 +36,16 @@ const myRouter = createBrowserRouter([
                 path:"wholesale",
                 element: <Wholesale/>
             },
-        
+            {
+                path:"/news",
+                element:<News/>
+            }, {
+                path:"/set",
+                element:<AssembleSet/>
+            },{
+                path:"/discount",
+                element:<SweetDiscount/>
+            },
         ],
     },
    {
