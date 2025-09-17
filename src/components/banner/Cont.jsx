@@ -43,7 +43,7 @@ function Cont() {
           <span>От 85 руб за шт. с уникальным дизайном. Приятный комплимент для коллег и партнеров.</span>
         </Link>
 
-        <Link to="/wholesale" className='cont6'>
+        <Link to="wholesale" className='cont6'>
           <img src={i6} alt="" />
           <h1>Оптовые поставки ➡</h1>
           <span>Предложения для кафе, отелей и т.д. Сотрудничество и отзывы.</span>
