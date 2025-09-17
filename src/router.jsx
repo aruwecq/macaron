@@ -6,8 +6,9 @@ import MainContent from "./admin/widgets/MainContent/MainContent";
 import ProductForm from "./admin/features/Products/ProductForm";
 import Products from "./admin/features/Products/Products";
 import DashboardPage from "./admin/features/pages/DashboardPage/DashboardPage";
-import Holydays from "./pages/category/Holydays";
+// import Holydays from "./pages/category/Holydays";
 import Wholesale from "./pages/wholesale/Wholesale";
+import Design from "./pages/design/design";
 const myRouter = createBrowserRouter([
     {
         path: "/",
@@ -16,10 +17,17 @@ const myRouter = createBrowserRouter([
             {
                 path:"",
                 element:<Home/>
-            }, {
-                path:"holydays",
-                element:<Holydays/>
-            },{
+            },
+
+            {
+                path:"design",
+                element: <Design/>
+            },
+            // , {
+            //     path:"holydays",
+            //     element:<Holyday/>
+            // },
+            {
                 path:"wholesale",
                 element: <Wholesale/>
             },
