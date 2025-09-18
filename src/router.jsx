@@ -13,7 +13,9 @@ import { ImageOff } from "lucide-react";
 import SweetDiscount from "./components/assemble/sweetDiscount/SweetDiscount";
 import Holydays from "./pages/category/Holydays/Holydays";
 import Design from "./pages/design/design";
+
 import SobratNabor from "./pages/Sobrat-Nabor/SobratNabor";
+import Gallery from "./pages/design/style/Gallery";
 const myRouter = createBrowserRouter([
     {
         path: "/",
@@ -37,6 +39,10 @@ const myRouter = createBrowserRouter([
                 element: <Wholesale/>
             },
             {
+                path:"gallery",
+                element: <Gallery/>
+            },
+        
                 path:"/news",
                 element:<News/>
             }, {
@@ -45,10 +51,11 @@ const myRouter = createBrowserRouter([
             },{
                 path:"/discount",
                 element:<SweetDiscount/>
-            },{
+          },{
                 path:"/sobratnabor/:id",
                 element:<SobratNabor/>
             },
+
         ],
     },
    {
