@@ -191,29 +191,9 @@ const ProductForm = ({ product, onClose }) => {
           <h4>Фотографии</h4>
           <div className="image-upload">
             <div className="image-preview">
-              {formData.image ? (
-                <img src={formData.image} alt="Предпросмотр" />
-              ) : (
-                <div className="placeholder">
-                  <Upload size={32} />
-                  <p>Загрузите фото</p>
-                  <span>JPG или PNG</span>
-                </div>
-              )}
+              <textarea name="" id="" onChange={(e)=> updateFormData("image", e.target.value)}></textarea>
             </div>
-            <Button
-              type="button"
-              variant="secondary"
-              size="sm"
-              onClick={() =>
-                updateFormData(
-                  "image",
-                  "https://images.pexels.com/photos/1070850/pexels-photo-1070850.jpeg?w=400"
-                )
-              }
-            >
-              Выбрать файл
-            </Button>
+      
           </div>
         </div>
       </div>

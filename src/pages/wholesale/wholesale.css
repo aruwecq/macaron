@@ -1,101 +1,230 @@
-.wholesale{
-    margin: 0;
-    padding: o;
-    box-sizing: border-box;
-    background-color: #fff;
+.wholesale {
+  margin: 0 auto;
+  box-sizing: border-box;
+  background-color: #fff;
+  max-width: 1440px;
+  overflow: hidden;
 }
+
 .wholesale-all {
-    text-align: center;
-    justify-content: center;
-   
+  text-align: center;
+  justify-content: center;
 }
-.wholesale-logo{
-    padding: 40px 0;
+
+.wholesale-logo {
+  padding: 40px 0;
 }
-.optom1{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    gap: 100px;
+
+.optom1 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 100px;
 }
-.optom-text1 h2{
-font-size: 37px;
-text-align: center;
-margin-bottom: 20px;
+
+.optom-text1 h2 {
+  font-size: 37px;
+  text-align: center;
+  margin-bottom: 20px;
 }
-.optom-text1 p{
-    margin-top: 40px;
-    line-height: 23px;
+
+.optom-text1 p {
+  margin-top: 40px;
+  line-height: 23px;
 }
-.optom-text1 button{
-    margin-top: 30px;
-    width: 200px;
-    height: 60px;
+
+.optom-text1 button {
+  margin-top: 30px;
+  width: 200px;
+  height: 60px;
 }
+
 .optom-logo2 {
-    text-align: center;
+  text-align: center;
 }
-.optom-logo2 h3{
-    font-size: 27px;
-    padding: 20px 0;
+
+.optom-logo2 h3 {
+  font-size: 27px;
+  padding: 20px 0;
 }
-.optom1-pages1{
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    text-align: center;
+
+.optom1-pages1 {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
 }
-.optom1-pages1 img{
-    width: 300px;
+
+.optom1-pages1 img {
+  width: 300px;
 }
-.optom1-pages1 h3{
-    padding: 15px 0;
+
+.optom1-pages1 h3 {
+  padding: 15px 0;
 }
-.optom1-pages1 p{
+
+.optom1-pages1 p {
+  line-height: 20px;
+  font-size: 12px;
+  padding-bottom: 40px;
+}
+
+.optom-pages2 {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.optom-page2 img {
+  width: 300px;
+}
+
+.optom-page2 h3 {
+  padding: 15px 0;
+}
+
+.optom-page2 p {
+  line-height: 20px;
+  font-size: 12px;
+  margin-bottom: 60px;
+}
+
+.optom-product h2 {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.optom-icons {
+  display: flex;
+  justify-content: center;
+  gap: 180px;
+  flex-wrap: wrap;
+}
+
+.optom-icons div {
+  width: 140px;
+  height: 140px;
+  background-color: #e2e2e2;
+  border-radius: 50%;
+}
+
+.optom-icons div img {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.icon-optom p {
+  width: 300px;
+  padding-right: 80px;
+  padding-top: 10px;
+}
+
+/* ==================== АДАПТИВ ==================== */
+@media (max-width: 1200px) {
+  .optom1 {
+    gap: 50px;
+  }
+  .optom-icons {
+    gap: 100px;
+  }
+}
+
+@media (max-width: 992px) {
+  .optom1 {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .optom1-pages1,
+  .optom-pages2 {
+    flex-wrap: wrap;
+  }
+
+  .optom-icons {
+    gap: 60px;
+  }
+
+  .optom-text1 h2 {
+    font-size: 30px;
+  }
+
+  .optom-logo2 h3 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .optom1-pages1 img,
+  .optom-page2 img {
+    width: 250px;
+  }
+
+  .optom-text1 h2 {
+    font-size: 26px;
+  }
+
+  .optom-text1 p {
+    font-size: 14px;
     line-height: 20px;
-    font-size: 12px;
-    padding-bottom: 40px;
+  }
+
+  .optom-icons {
+    gap: 40px;
+  }
+
+  .optom-icons div {
+    width: 110px;
+    height: 110px;
+  }
+
+  .icon-optom p {
+    width: 250px;
+    padding-right: 0;
+  }
 }
-.optom-pages2{
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+
+@media (max-width: 576px) {
+  .optom1 {
+    flex-direction: column;
+    gap: 20px;
     text-align: center;
-}
-.optom-page2 img{
-    width: 300px;
-}
-.optom-page2 h3{
-    padding: 15px 0;
-}
-.optom-page2 p{
-    line-height: 20px;
-    font-size: 12px;
-    margin-bottom: 60px;
-}
-.optom-product h2{
+  }
+
+  .optom1-pages1,
+  .optom-pages2 {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .optom1-pages1 img,
+  .optom-page2 img {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .optom-text1 h2 {
+    font-size: 22px;
+  }
+
+  .optom-text1 button {
+    width: 160px;
+    height: 50px;
+  }
+
+  .optom-icons {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .optom-icons div {
+    width: 90px;
+    height: 90px;
+  }
+
+  .icon-optom p {
+    width: 100%;
     text-align: center;
-    margin-bottom:60px ;
-   
+  }
 }
-.optom-icons{
-    display: flex;
-    justify-content: center;
-    gap: 180px;
-}
-.optom-icons div{
-    
-    width: 140px;
-    height: 140px;
-    background-color: #E2E2E2;
-    border-radius: 50%;
-}
-.optom-icons div img{
-    margin-left: 20px;
-    margin-top: 10px;
-}
-.icon-optom p{
-    width: 300px;
-    padding-right: 80px;
-    padding-top: 10px;
-}   

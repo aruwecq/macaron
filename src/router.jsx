@@ -4,16 +4,16 @@ import Home from "./pages/Home";
 import AdninLayout from "./admin/AdninLayout";
 import Products from "./admin/features/Products/Products";
 import DashboardPage from "./admin/features/pages/DashboardPage/DashboardPage";
-import Holydays from "./pages/category/Holydays/Holydays";
+// import Holydays from "./pages/category/Holydays/Holydays";
 import Wholesale from "./pages/wholesale/Wholesale";
 import ProductNews from "./components/product/productNews/ProductNews";
 import News from "./components/product/productNews/News";
 import AssembleSet from "./components/assemble/assembleSet/AssembleSet";
 import { ImageOff } from "lucide-react";
 import SweetDiscount from "./components/assemble/sweetDiscount/SweetDiscount";
-// import Holydays from "./pages/category/Holydays";
-import Wholesale from "./pages/wholesale/Wholesale";
+import Holydays from "./pages/category/Holydays/Holydays";
 import Design from "./pages/design/design";
+import SobratNabor from "./pages/Sobrat-Nabor/SobratNabor";
 const myRouter = createBrowserRouter([
     {
         path: "/",
@@ -28,10 +28,10 @@ const myRouter = createBrowserRouter([
                 path:"design",
                 element: <Design/>
             },
-            // , {
-            //     path:"holydays",
-            //     element:<Holyday/>
-            // },
+            , {
+                path:"holyday",
+                element:<Holydays/>
+            },
             {
                 path:"wholesale",
                 element: <Wholesale/>
@@ -45,6 +45,9 @@ const myRouter = createBrowserRouter([
             },{
                 path:"/discount",
                 element:<SweetDiscount/>
+            },{
+                path:"/sobratnabor/:id",
+                element:<SobratNabor/>
             },
         ],
     },

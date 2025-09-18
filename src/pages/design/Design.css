@@ -2,14 +2,12 @@
     padding: 0;
     margin: 0 auto;
     box-sizing: border-box;
-    max-width: 1440px;
+    /* max-width: 1440px; */
     background-color: #E2E2E2;
-    width: 1440px;
-
+    max-width: 1440px;
 }
 .design-all{
-    width: 1400px;
-    /* justify-content: center; */
+    justify-content: center;
 }
 .wholesale-logo{
     text-align: center;
@@ -22,18 +20,19 @@
     display: flex;
     gap: 50px;
     justify-content: center;
-    margin-left: 40px;
+    /* margin-left: 40px; */
     margin-bottom: 80px;
 }
 .page-design1{
-    width: 300px;
+    width: 250px;
     height: 450px;
     background-color: #fff;
     text-align: center;
+    border: 1px solid red;
 }
 .page-design1 img{
-    width: 300px;
-    height: 350px;
+    width: 240px;
+    height: 250px;
     margin-top: 20px;
 }
 .page-design1 h4{
