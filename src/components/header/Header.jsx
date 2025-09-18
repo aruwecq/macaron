@@ -54,7 +54,7 @@ function Header() {
             <Link className="menu-link" to="/set">Собрать набор</Link>
           </nav>
 
-          <Link className="logo" to="/dds">
+          <Link className="logo" to="/">
             {/* <div className="logo-mark">macaron<br />shop</div> */}
             <img className="logo-mark" src={home} alt="" />
           </Link>
