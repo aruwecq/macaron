@@ -16,6 +16,7 @@ import Design from "./pages/design/design";
 
 import SobratNabor from "./pages/Sobrat-Nabor/SobratNabor";
 import Gallery from "./pages/design/style/Gallery";
+import Gift from "./pages/gift/gift";
 const myRouter = createBrowserRouter([
     {
         path: "/",
@@ -41,7 +42,7 @@ const myRouter = createBrowserRouter([
             {
                 path:"gallery",
                 element: <Gallery/>
-            },
+            },{
         
                 path:"/news",
                 element:<News/>
@@ -54,10 +55,14 @@ const myRouter = createBrowserRouter([
           },{
                 path:"/sobratnabor/:id",
                 element:<SobratNabor/>
+            },{
+                path:"gift",
+                element: <Gift/>
             },
 
         ],
     },
+    
    {
         path: "/",
         element: <AdninLayout />,
