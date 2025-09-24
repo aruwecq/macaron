@@ -31,7 +31,7 @@ function Cont() {
           <span>Собрать набор макарун с уникальным дизайном.</span>
         </Link>
 
-        <Link to="/wedding" className='cont4'>
+        <Link to="/gift" className='cont4'>
           <img src={i4} alt="" />
           <h1>Свадебные предложения ➡</h1>
           <span>Нежные пирожные макаронс с разными вкусами для украшения вашего торжества.</span>

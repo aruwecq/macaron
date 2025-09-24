@@ -18,6 +18,8 @@ import September1 from "./pages/options/september1/September1";
 import LoginPage from "./admin/features/pages/LoginPage/LoginPage";
 import HappyBirthday from "./pages/options/happyBirthday/HappyBirthday";
 import ClassicMacarons from "./pages/options/classicMacarons/ClassicMacarons";
+import Gallery from "./pages/design/style/Gallery";
+import Gift from "./pages/gift/gift";
 const myRouter = createBrowserRouter([
     {
         path: "/",
@@ -41,6 +43,10 @@ const myRouter = createBrowserRouter([
                 element: <Wholesale/>
             },
             {
+                path:"gallery",
+                element: <Gallery/>
+            },{
+        
                 path:"/news",
                 element:<News/>
             }, {
@@ -49,7 +55,7 @@ const myRouter = createBrowserRouter([
             },{
                 path:"/discount",
                 element:<SweetDiscount/>
-            },{
+          },{
                 path:"/sobratnabor/:id",
                 element:<SobratNabor/>
             },{
@@ -62,6 +68,11 @@ const myRouter = createBrowserRouter([
                 path:"classicMacarons",
                 element:<ClassicMacarons/>
             },
+                {
+                path:"gift",
+                element: <Gift/>
+            },
+
         ],
     },
     {
