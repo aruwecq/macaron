@@ -31,6 +31,11 @@ const Sidebar: React.FC<SidebarProps> = ({
   isOpen,
   onToggle
 }) => {
+  const handleSelect = (sectionId: string) => {
+    setActiveSection(sectionId);
+    localStorage.setItem("activeSection", sectionId); // ✅ сохраняем
+  };
+
   return (
     <>
       <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
@@ -57,7 +62,7 @@ const Sidebar: React.FC<SidebarProps> = ({
               <button
                 key={item.id}
                 className={`nav-item ${activeSection === item.id ? 'active' : ''}`}
-                onClick={() => setActiveSection(item.id)}
+                onClick={() => handleSelect(item.id)}
               >
                 <span className="nav-emoji">{item.emoji}</span>
                 <Icon size={20} className="nav-icon" />

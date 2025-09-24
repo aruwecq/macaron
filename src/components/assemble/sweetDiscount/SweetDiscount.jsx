@@ -38,11 +38,7 @@ function SweetDiscount() {
           <div key={item.id} className="sweet-card">
             <div className="sweet-image">
               <img
-                src={
-                  item.mainImage ||
-                  (item.images && item.images[0]) ||
-                  "https://via.placeholder.com/370x250?text=Нет+фото"
-                }
+                src={item.mainImage}
                 alt={item.title}
               />
             </div>

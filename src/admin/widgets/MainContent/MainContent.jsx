@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import DashboardSection from '../../features/Dashboard/Dashboard';
 import ProductsSection from '../../features/Products/Products';
 import OrdersSection from '../../features/Orders/Orders';
@@ -6,7 +6,19 @@ import UsersSection from '../../features/Users/Users';
 import SettingsSection from '../../features/Settings/Settings';
 import './MainContent.scss';
 
-const MainContent = ({ activeSection }) => {
+const MainContent = ({ activeSection: propActiveSection }) => {
+  const [activeSection, setActiveSection] = useState(
+    localStorage.getItem('activeSection') || propActiveSection || 'dashboard'
+  );
+
+  // следим за изменением activeSection от родителя
+  useEffect(() => {
+    if (propActiveSection) {
+      setActiveSection(propActiveSection);
+      localStorage.setItem('activeSection', propActiveSection);
+    }
+  }, [propActiveSection]);
+
   const renderSection = () => {
     switch (activeSection) {
       case 'dashboard':
@@ -26,9 +38,7 @@ const MainContent = ({ activeSection }) => {
 
   return (
     <main className="main-content">
-      <div className="content-container">
-        {renderSection()}
-      </div>
+      <div className="content-container">{renderSection()}</div>
     </main>
   );
 };

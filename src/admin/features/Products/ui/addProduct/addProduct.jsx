@@ -1,36 +1,38 @@
 import React from "react";
+import Modal from "../../../../shared/components/Card/Input/Modal/Modal";
 
-export default function addProduct() {
+export default function AddProduct({isOpen, product, title, closeModal}) {
+  
   const renderModalContent = () => {
     return (
       <div className="product-details">
-        <img
-          src={selectedProduct.image}
-          alt={selectedProduct.name}
+        {/* <img
+          src={product.image}
+          alt={product.name}
           className="product-image-large"
-        />
+        /> */}
         <div className="product-info">
-          <h3>{selectedProduct.name}</h3>
+          <h3>{product.name}</h3>
           <div className="info-grid">
             <div className="info-item">
               <span className="label">Вкус:</span>
-              <span>{selectedProduct.flavor}</span>
+              <span>{product.flavor}</span>
             </div>
             <div className="info-item">
               <span className="label">Цена:</span>
-              <span>₽{selectedProduct.price}</span>
+              <span>₽{product.price}</span>
             </div>
             <div className="info-item">
               <span className="label">Состав:</span>
-              <span>{selectedProduct.composition}</span>
+              <span>{product.composition}</span>
             </div>
             <div className="info-item">
               <span className="label">Пищевая ценность:</span>
-              <span>{selectedProduct.nutrition}</span>
+              <span>{product.nutrition}</span>
             </div>
             <div className="info-item">
               <span className="label">Срок хранения:</span>
-              <span>{selectedProduct.shelfLife}</span>
+              <span>{product.shelfLife}</span>
             </div>
           </div>
         </div>
@@ -40,10 +42,9 @@ export default function addProduct() {
   return (
     <div>
       <Modal
-        isOpen={isModalOpen}
+        isOpen={isOpen}
         onClose={closeModal}
-        title={getModalTitle()}
-        actions={renderModalActions()}
+        title={title}
       >
         {renderModalContent()}
       </Modal>

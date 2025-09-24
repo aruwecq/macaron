@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Mail, Lock, User, Eye, EyeOff } from 'lucide-react';
-import { useAuth } from '../../shared/context/AuthContext';
-import Button from '../../shared/components/Button/Button';
-import Input from '../../shared/components/Input/Input';
-import Card from '../../shared/components/Card/Card';
+import { useAuth } from '../../../shared/components/context/AuthContext';
+import Button from '../../../shared/components/Button/Button';
+import Input from '../../../shared/components/Card/Input/Input';
+import Card from '../../../shared/components/Card/Card';
 import './LoginPage.scss';
 
-const LoginPage: React.FC = () => {
+const LoginPage = () => {
   const { setIsAuthenticated } = useAuth();
   const [isRegisterMode, setIsRegisterMode] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -18,10 +18,10 @@ const LoginPage: React.FC = () => {
     confirmPassword: ''
   });
   
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [errors, setErrors] = useState({});
 
   const validateForm = () => {
-    const newErrors: Record<string, string> = {};
+    const newErrors = {};
     
     if (!formData.email) {
       newErrors.email = 'Электронная почта обязательна';
@@ -47,7 +47,7 @@ const LoginPage: React.FC = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     
     if (validateForm()) {
@@ -58,7 +58,7 @@ const LoginPage: React.FC = () => {
     }
   };
 
-  const updateFormData = (field: string, value: string) => {
+  const updateFormData = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
     if (errors[field]) {
       setErrors(prev => ({ ...prev, [field]: '' }));

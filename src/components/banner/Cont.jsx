@@ -19,13 +19,13 @@ function Cont() {
           <span>Готовые наборы со скидкой. Вы можете подобрать набор на подходящий случай.</span>
         </Link>
 
-        <Link to="/custom-set" className='cont2'>
+        <Link to="/set" className='cont2'>
           <img src={i2} alt="" />
           <h1>Собрать свой набор ➡</h1>
           <span>Выбрать количество макарун и выбрать вкусы.</span>
         </Link>
 
-        <Link to="/custom-print" className='cont3'>
+        <Link to="/design" className='cont3'>
           <img src={i3} alt="" />
           <h1>Набор с индивидуальной печатью ➡</h1>
           <span>Собрать набор макарун с уникальным дизайном.</span>

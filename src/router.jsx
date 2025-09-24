@@ -4,16 +4,20 @@ import Home from "./pages/Home";
 import AdninLayout from "./admin/AdninLayout";
 import Products from "./admin/features/Products/Products";
 import DashboardPage from "./admin/features/pages/DashboardPage/DashboardPage";
-// import Holydays from "./pages/category/Holydays/Holydays";
+import Holydays from "./pages/category/Holydays/Holydays";
 import Wholesale from "./pages/wholesale/Wholesale";
-import ProductNews from "./components/product/productNews/ProductNews";
+// import ProductNews from "./components/product/productNews/ProductNews";
 import News from "./components/product/productNews/News";
 import AssembleSet from "./components/assemble/assembleSet/AssembleSet";
-import { ImageOff } from "lucide-react";
+// import { ImageOff } from "lucide-react";
 import SweetDiscount from "./components/assemble/sweetDiscount/SweetDiscount";
-import Holydays from "./pages/category/Holydays/Holydays";
+// import Holydays from "./pages/category/Holydays/Holydays";
 import Design from "./pages/design/design";
 import SobratNabor from "./pages/Sobrat-Nabor/SobratNabor";
+import September1 from "./pages/options/september1/September1";
+import LoginPage from "./admin/features/pages/LoginPage/LoginPage";
+import HappyBirthday from "./pages/options/happyBirthday/HappyBirthday";
+import ClassicMacarons from "./pages/options/classicMacarons/ClassicMacarons";
 const myRouter = createBrowserRouter([
     {
         path: "/",
@@ -29,7 +33,7 @@ const myRouter = createBrowserRouter([
                 element: <Design/>
             },
             , {
-                path:"holyday",
+                path:"holydays",
                 element:<Holydays/>
             },
             {
@@ -48,8 +52,21 @@ const myRouter = createBrowserRouter([
             },{
                 path:"/sobratnabor/:id",
                 element:<SobratNabor/>
+            },{
+                path:"september1",
+                element:<September1/>
+            },{
+                path:"happyBirthday",
+                element:<HappyBirthday/>
+            },{
+                path:"classicMacarons",
+                element:<ClassicMacarons/>
             },
         ],
+    },
+    {
+        path:"/log-in",
+        element:<LoginPage/>
     },
    {
         path: "/",
@@ -63,7 +80,6 @@ const myRouter = createBrowserRouter([
                 path: "/products",
                 element: <Products />
             },
-            
         ]
     }
 ])

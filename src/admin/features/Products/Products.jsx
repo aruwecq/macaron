@@ -6,11 +6,12 @@ import Modal from "../../shared/components/Card/Input/Modal/Modal";
 import ProductForm from "./ProductForm";
 import "./Products.scss";
 import axios from "axios";
+import AddProduct from "./ui/addProduct/addProduct";
 
 const Products = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalType, setModalType] = useState("add");
-  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [selectedProduct, setSelectedProduct] = useState([]);
   const [product, setProduct] = useState([]);
 
   // npm install axios
@@ -20,7 +21,7 @@ const Products = () => {
       const res = await axios.get(
         "https://68ae8d71b91dfcdd62b979fb.mockapi.io/products"
       );
-      console.log("Products (axios):", res.data);
+      console.log();
       setProduct(res.data);
       return res.data;
     } catch (error) {
@@ -50,14 +51,34 @@ const Products = () => {
 
   const openModal = (type, product) => {
     setModalType(type);
-    setSelectedProduct(product || null);
+    setSelectedProduct(product);
     setIsModalOpen(true);
   };
+  console.log(selectedProduct);
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedProduct(null);
+  const closeModal = async (action, productId) => {
+    if (action === "delete") {
+      console.log(productId);
+      
+      try {
+        await axios.delete(
+          `https://68ae8d71b91dfcdd62b979fb.mockapi.io/products/${productId}`
+        );
+        // обновим список продуктов локально
+        setProduct((prev) => prev.filter((p) => p.id !== productId));
+        alert("Продукт успешно удалён ✅");
+      } catch (err) {
+        console.error("Ошибка при удалении продукта:", err);
+        alert("Не удалось удалить продукт ❌");
+      }
+    }
+    setIsModalOpen(false)
+    setTimeout(() => {
+      setSelectedProduct(null);
+    }, 500);
   };
+
+
 
   const renderModalContent = () => {
     switch (modalType) {
@@ -68,32 +89,51 @@ const Products = () => {
         return selectedProduct ? (
           <div className="product-details">
             <img
-              src={selectedProduct.image}
-              alt={selectedProduct.name}
+              src={selectedProduct.mainImage}
+              alt={selectedProduct.title}
               className="product-image-large"
             />
             <div className="product-info">
-              <h3>{selectedProduct.name}</h3>
+              <h3>{selectedProduct.title}</h3>
               <div className="info-grid">
+                {/* Вкус */}
                 <div className="info-item">
                   <span className="label">Вкус:</span>
-                  <span>{selectedProduct.flavor}</span>
+                  <span>
+                    {selectedProduct.flavors?.map((item, i) => (
+                      <span key={i}>{item} </span>
+                    ))}
+                  </span>
                 </div>
+
+                {/* Цена */}
                 <div className="info-item">
                   <span className="label">Цена:</span>
                   <span>₽{selectedProduct.price}</span>
                 </div>
+
+                {/* Состав */}
                 <div className="info-item">
                   <span className="label">Состав:</span>
-                  <span>{selectedProduct.composition}</span>
+                  <span>{selectedProduct.ingredients}</span>
                 </div>
+
+                {/* Пищевая ценность */}
                 <div className="info-item">
                   <span className="label">Пищевая ценность:</span>
-                  <span>{selectedProduct.nutrition}</span>
+                  <div className="sept-nutrition">
+                    <p>Энергия: {selectedProduct.nutrition?.energy}</p>
+                    <p>Белки: {selectedProduct.nutrition?.proteins}</p>
+                    <p>Жиры: {selectedProduct.nutrition?.fats}</p>
+                    <p>Углеводы: {selectedProduct.nutrition?.carbohydrates}</p>
+                  </div>
                 </div>
+
+                {/* Срок хранения */}
                 <div className="info-item">
                   <span className="label">Срок хранения:</span>
-                  <span>{selectedProduct.shelfLife}</span>
+                  <span>{selectedProduct.storage.conditions}</span>
+                  <span>{selectedProduct.storage.shelfLife}</span>
                 </div>
               </div>
             </div>
@@ -104,8 +144,9 @@ const Products = () => {
         return (
           <div className="delete-confirmation">
             <p>
-              Вы уверены, что хотите удалить продукт "{selectedProduct?.name}"?
+              Вы уверены, что хотите удалить продукт "{selectedProduct?.title}"?
             </p>
+
             <p className="warning">Это действие нельзя отменить.</p>
           </div>
         );
@@ -123,7 +164,10 @@ const Products = () => {
             <Button variant="secondary" onClick={closeModal}>
               Отмена
             </Button>
-            <Button variant="danger" onClick={closeModal}>
+            <Button
+              variant="danger"
+              onClick={() => closeModal("delete", selectedProduct?.id)}
+            >
               Да, удалить
             </Button>
           </>
@@ -170,7 +214,11 @@ const Products = () => {
           [...product].reverse().map((product) => (
             <Card key={product.id} className="product-card" hover>
               <div className="product-image">
-                <img src={product.mainImage} alt={product.title} />
+                <img
+                  src={product.mainImage}
+                  alt={product.title}
+                  onClick={() => openModal("view", product)}
+                />
                 {/* <div className={`product-status ${product.inStock ? 'in-stock' : 'out-of-stock'}`}>
                 {product.inStock ? 'В наличии' : 'Нет в наличии'}
               </div> */}
@@ -219,6 +267,13 @@ const Products = () => {
       >
         {renderModalContent()}
       </Modal>
+      {/* {isModalOpen && (
+        <AddProduct
+          isOpen={isModalOpen === "view" ? true : false}
+          title={isModalOpen}
+          closeModal={closeModal}
+        />
+      )} */}
     </div>
   );
 };

@@ -44,9 +44,11 @@
       transform: translateY(-5px);
       box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
 
-      h1 { color: #d35400; }
+      // h1 { color: #d35400; }
       span { color: #333; }
-      img { transform: scale(1.1); }
+      
+      img { transform: rotate(-6deg) scale(1.1); }
+      h1 { color: #d12d4b; }
     }
   }
 
@@ -154,13 +156,8 @@
       line-height: 1.4;
     }
 
-    &.blue {
-      background: linear-gradient(135deg, #8CC4EC, #6AADE0);
-    }
-
-    &.pink {
-      background: linear-gradient(135deg, #FF4D6D, #E63B5A);
-    }
+    &.blue { background: linear-gradient(135deg, #99cbef, #369cfd); }
+    &.pink { background: linear-gradient(135deg, #FF4D6D, #fdccd8); }
   }
 
   .sale-new {

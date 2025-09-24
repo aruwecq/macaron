@@ -171,7 +171,7 @@
   font-weight: 650;
   // background-color: #F05B67;
   // border: 1px solid red;
- 
+  
 }  .menu-select1 {
   width: 120px;
   height: 40px;
@@ -185,6 +185,23 @@ color: #000;
 
 }
 }
-.icon-btn{
+.dark-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9); // почти черный экран
+  z-index: 998; // ниже чем header (у header 999)
+}
 
+.header-landing.dark {
+  .utility .row,
+  .main-nav {
+    background: #222; // фон в шапке
+  }
+
+  a, .phone p, .icons, .menu-link, .menu-select, .menu-select1 {
+    color: #fff;
+  }
 }
