@@ -36,7 +36,7 @@ function Holydays() {
           <div className="holiday-card__overlay" />
           <h3 className="holiday-card__title">День рождения</h3>
         </Link>
-        <Link to="/holiday/sept1" className="holiday-card sept1 aaa">
+        <Link to="/september1" className="holiday-card sept1 aaa">
           <div className="holiday-card__bg" style={{ backgroundImage: "url(https://macaronshop.ru/wp-content/uploads/2021/06/podarki-na-1-sentyabrya-10.png)" }} />
           <div className="holiday-card__overlay" />
           <h3 className="holiday-card__title">1 сентября</h3>

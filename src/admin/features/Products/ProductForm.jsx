@@ -152,8 +152,11 @@ const ProductForm = ({ product, onClose }) => {
             >
               <option value="">Выберите категорию</option>
               <option value="macaron">Macaron</option>
-              <option value="cake">Cake</option>
-              <option value="gift">Gift</option>
+              <option value="tubes">Вафельные трубки</option>
+              <option value="cakePops">Кейк попсы</option>
+              <option value="potatoCakes">Десерт картошка</option>
+              <option value="combosWedding">Комбо-наборы</option>
+              <option value="eclair">Эклеры</option>
             </select>
           </div>
 
@@ -166,9 +169,22 @@ const ProductForm = ({ product, onClose }) => {
             >
               <option value="">Выберите событие</option>
               <option value="День рождения">День рождения</option>
-              <option value="Свадьба">Свадьба</option>
+              <option value="Свадебные предложения">Свадебные предложения</option>
               <option value="8 марта">8 марта</option>
               <option value="Новый год">Новый год</option>
+              <option value="Корпоративные подарки">Корпоративные подарки</option>
+              <option value="Детям">Детям</option>
+              <option value="Хэллоуин">Хэллоуин</option>
+              <option value="на 1 сентября">на 1 сентября</option>
+              <option value="День матери">День матери</option>
+              <option value="Классические макаронс">Классические макаронс</option>
+              <option value="Комбо-наборы">Комбо-наборы</option>
+              <option value="На девичник">На девичник</option>
+              <option value="Последний звонок">Последний звонок</option>
+              <option value="Корпоративные подарки">Корпоративные подарки</option>
+              <option value="Учителям ">Учителям </option>
+              <option value="Воспитателям">Воспитателям</option>
+
             </select>
           </div>
 
@@ -180,9 +196,8 @@ const ProductForm = ({ product, onClose }) => {
               onChange={(e) => updateFormData("sellingType", e.target.value)}
             >
               <option value="">Выберите тип</option>
-              <option value="подарки">Подарки</option>
-              <option value="коробки">Коробки</option>
-              <option value="наборы">Наборы</option>
+              <option value="оптовые поставки">оптовые поставки</option>
+              <option value="подарки">подарки</option> 
             </select>
           </div>
         </div>
@@ -191,9 +206,11 @@ const ProductForm = ({ product, onClose }) => {
           <h4>Фотографии</h4>
           <div className="image-upload">
             <div className="image-preview">
-              <textarea name="" id="" onChange={(e)=> updateFormData("image", e.target.value)}></textarea>
+              <textarea
+                value={formData.image}
+                onChange={(e) => updateFormData("image", e.target.value)}
+              ></textarea>
             </div>
-      
           </div>
         </div>
       </div>

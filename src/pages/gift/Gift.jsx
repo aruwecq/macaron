@@ -8,7 +8,7 @@ function Gift() {
   const [products, setProducts] = useState([])
 
   useEffect(() => {
-    fetch("https://68ae8d71b91dfcdd62b979fb.mockapi.io/products") // 👈 өз mockapi url жаз
+    fetch("https://68ae8d71b91dfcdd62b979fb.mockapi.io/products") 
       .then(res => res.json())
       .then(data => {
         const filtered = data.filter(item => item.forEvent === "Свадебные предложения")

@@ -52,10 +52,10 @@ function Product() {
     <h1>Популярные наборы</h1>
   </div>
 
-  <div className='list'>
+  <div className='listt'>
     {products.slice(0, 6).map((item) => (
-      <div key={item.id} className="product-card">
-        <div className="product-image">
+      <div key={item.id} className="productcard">
+        <div className="producttimage">
           <img src={item.mainImage || (item.images && item.images[0]) || "https://via.placeholder.com/370x250?text=Нет+фото"} alt={item.title} />
         </div>
 
@@ -68,7 +68,7 @@ function Product() {
         <div className="product-footer">
           <span className="product-price">{item.price} сом</span>
           <button className="product-btn">
-            <Link to="/" className="icon">🛒</Link> В корзину
+            <Link to="/" className="icon">🛒</Link> В корзину.
           </button>
         </div>
       </div>

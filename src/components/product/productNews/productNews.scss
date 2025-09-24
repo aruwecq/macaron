@@ -8,9 +8,9 @@
   max-width: 1440px;
   margin: 0 auto;
 }
-.list{
-   display: flex;
-  flex-wrap: wrap;
+.list {
+  display: flex;
+  flex-direction: column;
   gap: 20px;
   justify-content: center;
 }
@@ -188,21 +188,18 @@
     }
   }
 }
-.hh1{
+.hh1 {
   display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
   padding: 30px;
 }
-.hh1 h1{
-  
+.hh1 h1 {
   font-weight: 400;
   background: linear-gradient(90deg, #5f7aff, #2345ce); // твой градиент
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text; 
+  background-clip: text;
   // color: transparent; // чтобы обычный цвет не мешал
-
-
 }
