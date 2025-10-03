@@ -1,8 +1,17 @@
 .holydays {
   // padding: 20px;
-  max-width: 1440px;
+  // max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
   position: relative;
+  // display: flex;
+  align-items: center;
+  justify-content: center;  
+  .holidays1{
+  //  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  }
 }
 
 .breadcrumbs {
@@ -10,6 +19,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
+  justify-content: space-between;
 
   a {
     text-decoration: none;
@@ -297,7 +307,7 @@
 }
 
 .breadcrumbs {
-  max-width: 1400px;
+  // max-width: 1400px;
   display: flex;
   align-items: center;
   justify-content: space-between;
