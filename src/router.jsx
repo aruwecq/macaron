@@ -20,78 +20,124 @@ import HappyBirthday from "./pages/options/happyBirthday/HappyBirthday";
 import ClassicMacarons from "./pages/options/classicMacarons/ClassicMacarons";
 import Gallery from "./pages/design/style/Gallery";
 import Gift from "./pages/gift/gift";
+import CartPage from "./components/cart/CartPage";
+import Card from "./components/card/Card";
+import Otzyv from "./pages/about/abouts/Otzyv";
+import Guarantee from "./pages/about/abouts/Guarantee";
+import Auther from "./auth/Auther";
+import Finalli from "./auth/Finalli";
+import Delivery from "./pages/about/abouts/Delivery";
+import Contacts from "./pages/about/abouts/Contacts";
+import About from "./pages/about/abouts/About";
 const myRouter = createBrowserRouter([
-    {
-        path: "/",
-        element: <Layout />,
-        children:[
-            {
-                path:"",
-                element:<Home/>
-            },
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        path: "",
+        element: <Home />,
+      },
 
-            {
-                path:"design",
-                element: <Design/>
-            },
-            , {
-                path:"holydays",
-                element:<Holydays/>
-            },
-            {
-                path:"wholesale",
-                element: <Wholesale/>
-            },
-            {
-                path:"gallery",
-                element: <Gallery/>
-            },{
-        
-                path:"/news",
-                element:<News/>
-            }, {
-                path:"/set",
-                element:<AssembleSet/>
-            },{
-                path:"/discount",
-                element:<SweetDiscount/>
-          },{
-                path:"/sobratnabor/:id",
-                element:<SobratNabor/>
-            },{
-                path:"september1",
-                element:<September1/>
-            },{
-                path:"happyBirthday",
-                element:<HappyBirthday/>
-            },{
-                path:"classicMacarons",
-                element:<ClassicMacarons/>
-            },
-                {
-                path:"gift",
-                element: <Gift/>
-            },
-
-        ],
-    },
-    {
-        path:"/log-in",
-        element:<LoginPage/>
-    },
+      {
+        path: "design",
+        element: <Design />,
+      },
+      ,
+      {
+        path: "holydays",
+        element: <Holydays />,
+      },
+      {
+        path: "wholesale",
+        element: <Wholesale />,
+      },
+      {
+        path: "gallery",
+        element: <Gallery />,
+      },
+      {
+        path: "/news",
+        element: <News />,
+      },
+      {
+        path: "/set",
+        element: <AssembleSet />,
+      },
+      {
+        path: "/discount",
+        element: <SweetDiscount />,
+      },
+      {
+        path: "/sobratnabor/:id",
+        element: <SobratNabor />,
+      },
+      {
+        path: "september1",
+        element: <September1 />,
+      },
+      {
+        path: "happyBirthday/:id",
+        element: <HappyBirthday />,
+      },
+      {
+        path: "classicMacarons",
+        element: <ClassicMacarons />,
+      },
+      {
+        path: "gift",
+        element: <Gift />,
+      },
+      {
+        path: "/cart",
+        element: <CartPage />,
+      }, 
+      {
+        path: "/otzyv",
+        element: <Otzyv />,
+      },   {
+        path: "/guarantee",
+        element: <Guarantee />,
+      }, 
    {
-        path: "/",
-        element: <AdninLayout />,
-        children: [
-            {
-                path: "/admin",
-                element: <DashboardPage/>
-            },
-            {
-                path: "/products",
-                element: <Products />
-            },
-        ]
-    }
-])
-export default myRouter
+        path: "/auther",
+        element: <Auther/>,
+      },  {
+        path: "/finalli",
+        element: <Finalli/>,
+      }, 
+  {
+        path: "/delivery",
+        element: <Delivery/>,
+      },
+       {
+        path: "/contacts",
+        element: <Contacts/>,
+      }, 
+  {
+        path: "/about",
+        element: <About/>,
+      }, 
+
+    ],
+  },
+  {
+    path: "/log-in",
+    element: <LoginPage />,
+  },
+  {
+    path: "/",
+    element: <AdninLayout />,
+    children: [
+      {
+        path: "/admin",
+        element: <DashboardPage />,
+      },
+      {
+        path: "/products",
+        element: <Products />,
+      },
+    ],
+  },
+]);
+export default myRouter;

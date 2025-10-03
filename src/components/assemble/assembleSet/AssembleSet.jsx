@@ -68,11 +68,11 @@ function AssembleSet() {
   return (
     <div className="set">
       <div className="link">
-        <Link to="/">Главная страница</Link> »<p>Собери свой набор макаронс</p>
+        <Link to="/">Главная страница</Link> »<p className="title-set">Собери свой набор макаронс</p>
       </div>
 
       <div className="products">
-        {products.map((p) => (
+        {products.map((p) => (  
           <div className="product-card" key={p.id}>
             <Link to={`/sobratnabor/${getCountFromTitle(p.title)}`} className="aa">
               <img src={p.image} alt={p.title} />

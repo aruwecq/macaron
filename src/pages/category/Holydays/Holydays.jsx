@@ -31,7 +31,7 @@ function Holydays() {
 
 
       <div className="holidays-grid">
-        <Link to="/holiday/birthday" className="holiday-card birthday aaa">
+        <Link to="/happyBirthday" className="holiday-card birthday aaa">
           <div className="holiday-card__bg" style={{ backgroundImage: "url(https://macaronshop.ru/wp-content/uploads/2024/09/setcard.png)" }} />
           <div className="holiday-card__overlay" />
           <h3 className="holiday-card__title">День рождения</h3>
@@ -42,15 +42,15 @@ function Holydays() {
           <h3 className="holiday-card__title">1 сентября</h3>
         </Link>
 
-        <Link to="/holiday/med" className="holiday-card med aaa">
+        <Link to="/classicMacarons" className="holiday-card med aaa">
           <div className="holiday-card__bg" style={{ backgroundImage: "url(https://macaronshop.ru/wp-content/uploads/2025/04/den-medika.png)" }} />
           <div className="holiday-card__overlay" />
-          <h3 className="holiday-card__title">Медицинским работникам</h3>
+          <h3 className="holiday-card__title">классические макаронcы</h3>
         </Link>
-        <Link to="/holiday/candy" className="holiday-card candy">
+        <Link to="/happyBirthday/Свадьба" className="holiday-card candy">
           <div className="holiday-card__bg" style={{ backgroundImage: "url(https://macaronshop.ru/wp-content/uploads/2024/09/setcard_4.png)" }} />
           <div className="holiday-card__overlay candy-bar" />
-          <h3 className="holiday-card__title">Кенди-бары</h3>
+          <h3 className="holiday-card__title">Свадебные наборы</h3>
         </Link>
 
         <Link to="/holiday/boss" className="holiday-card boss aaa">

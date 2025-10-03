@@ -3,6 +3,8 @@ import { Menu, Bell, User, LogOut } from 'lucide-react';
 import { useAuth } from '../../shared/components/context/AuthContext';
 import Button from '../../shared/components/Button/Button';
 import './Header.scss';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 interface HeaderProps {
   onToggleSidebar: () => void;
@@ -10,9 +12,13 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ onToggleSidebar }) => {
   const { setIsAuthenticated } = useAuth();
+  const navigate = useNavigate()
 
   const handleLogout = () => {
     setIsAuthenticated(false);
+    localStorage.removeItem("user")
+    navigate("/")
+    toast.success("Вы успешно вышли")
   };
 
   return (
@@ -40,7 +46,7 @@ const Header: React.FC<HeaderProps> = ({ onToggleSidebar }) => {
           </div>
           <div className="user-info">
             <span className="user-name">Администратор</span>
-            <span className="user-email">admin@sweetmacarons.ru</span>
+            <span className="user-email">admin@admin.com</span>
           </div>
         </div>
         

@@ -3,7 +3,7 @@ import DashboardSection from '../../features/Dashboard/Dashboard';
 import ProductsSection from '../../features/Products/Products';
 import OrdersSection from '../../features/Orders/Orders';
 import UsersSection from '../../features/Users/Users';
-import SettingsSection from '../../features/Settings/Settings';
+import Comments from '../../features/Settings/Comments';
 import './MainContent.scss';
 
 const MainContent = ({ activeSection: propActiveSection }) => {
@@ -29,8 +29,8 @@ const MainContent = ({ activeSection: propActiveSection }) => {
         return <OrdersSection />;
       case 'users':
         return <UsersSection />;
-      case 'settings':
-        return <SettingsSection />;
+      case 'comments':
+        return <Comments />;
       default:
         return <DashboardSection />;
     }
