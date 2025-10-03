@@ -1,10 +1,81 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-*{
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-  font-weight: weight;
   font-style: normal;
+}
+
+:root {
+  --bg-color: #ffffff;         
+  --text-color: #1a1a1a;       
+  --card-bg: #ffffff;           
+  --accent-color: #8E64FF;      
+  --accent-hover: #6c4cd9;      
+  --border-color: #e6e6e6;      
+  --love-color: linear-gradient(90deg, #ff4d6d, #8cc4ec);
+  --heder-link-top: #000; 
+  --sale-title:#222;
+  --productcard:#fff;
+  --product-span: #555;
+   --product-title: #222;
+   --row-bg: #f7ebe5;
+   --footer-h2: #000;
+   --discolor:#444;
+
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;          
+  --text-color: #ffffff;        
+  --card-bg: #1e1e1e;           
+  --accent-color: #bb86fc;      
+  --accent-hover: #9a67ea;      
+  --border-color: #737272;      
+  --love-color: linear-gradient(90deg, #d30ecc, #8cc4ec);
+  --heder-link-top: #fff; 
+  --sale-title:#222;
+  --productcard:#767373;
+  --product-span: #fafafa;
+   --product-title:  #fafafa;
+   --row-bg: #222;
+    --footer-h2: #f8d1d1;
+    --discolor:#f7f4f4;
+    
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s, color 0.3s;
+}
+
+a {
+  color: var(--heder-link-top);
+  text-decoration: none;
+}
+
+/* button {
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition:all 0.3s;
+} */
+
+button:hover {
+  background: var(--accent-hover);
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 16px;
+  border-radius: 8px;
+  transition: all 0.3s, border 0.3s;
 }

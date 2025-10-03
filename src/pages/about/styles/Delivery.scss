@@ -1,0 +1,77 @@
+.delivery {
+    max-width: 1440px;
+  width: 100%;
+  padding: 60px 20px;   
+   margin:  0 auto;
+  background: #f8f8f8;
+
+  &__container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+
+    @media (max-width: 900px) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  &__image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+    img {
+      max-width: 100%;
+      width: 600px; 
+      height: auto;
+    }
+
+    @media (max-width: 900px) {
+      img {
+        width: 80%; // для телефонов чуть меньше
+      }
+    }
+  }
+
+  &__content {
+    flex: 1.2;
+
+    h1 {
+      font-size: 40px; // сделал крупнее
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 22px;
+      margin: 20px 0 10px;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 20px;
+      margin-bottom: 20px;
+
+      li {
+        margin-bottom: 8px;
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__note {
+    font-size: 16px;
+    color: #666;
+  }
+}

@@ -21,7 +21,8 @@
     font-size: 15px;
     cursor: pointer;
     transition: all 0.3s ease;
-
+    background-color: #edebeb;
+    color: #000;
     &:hover {
       background: #eee;
     }
@@ -88,12 +89,13 @@
       font-size: 16px;
       font-weight: bold;
       color: #222;
-
+      
       .sept-oldprice {
         margin-left: 10px;
         font-size: 14px;
         color: #888;
         text-decoration: line-through;
+
       }
     }
 
@@ -177,5 +179,37 @@
 
   &:hover {
     background: #e63673;
+  }
+}
+.sept-addcart.added {
+  background: linear-gradient(135deg, #4caf50, #81c784);
+  box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+
+  &:hover {
+    background: linear-gradient(135deg, #43a047, #66bb6a);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(76, 175, 80, 0.4);
+  }
+}
+
+
+.sept-price-filter {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+
+  input {
+    width: 120px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+
+    &:focus {
+      outline: none;
+      border-color: #ff4b8d;
+      box-shadow: 0 0 6px rgba(255, 75, 141, 0.3);
+    }
   }
 }

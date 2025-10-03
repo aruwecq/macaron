@@ -1,16 +1,18 @@
+// ClassicMacarons.jsx
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Card from "../../../components/card/Card";
 import "./ClassicMacarons.scss";
 
 function ClassicMacarons() {
   const [selectedCategory, setSelectedCategory] = useState("Классические макаронс");
   const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState([]);
+  const [minPrice, setMinPrice] = useState(0);
+  const [maxPrice, setMaxPrice] = useState(10000);
 
   const categories = [
     "Все",
     "Новый год",
-    "День отца",
     "День тренера",
     "Хэллоуин",
     "День матери",
@@ -28,26 +30,25 @@ function ClassicMacarons() {
   useEffect(() => {
     axios
       .get("https://68ae8d71b91dfcdd62b979fb.mockapi.io/products")
-      .then((res) => {
-        console.log(res.data);
-        setProducts(res.data);
-      })
+      .then((res) => setProducts(res.data))
       .catch((err) => console.error("Ошибка при загрузке продуктов:", err));
   }, []);
 
-  const filteredProducts =
-    selectedCategory === "Все"
-      ? products
-      : products.filter((p) => p.forEvent === selectedCategory);
+  const prices = products.map((p) => p.price);
+  const minProductPrice = Math.min(...prices, 0);
+  const maxProductPrice = Math.max(...prices, 10000);
+
+  const filteredProducts = products
+    .filter((p) => selectedCategory === "Все" || p.forEvent === selectedCategory)
+    .filter((p) => p.price >= minPrice && p.price <= maxPrice);
 
   const addToCart = (product) => {
-    setCart((prev) => [...prev, product]);
     alert(`${product.title} добавлен в корзину 🛒`);
   };
 
   return (
     <div className="classic-wrapper">
-      {/* кнопки фильтров */}
+      {/* кнопки категорий */}
       <div className="classic-buttons">
         {categories.map((cat) => (
           <button
@@ -60,37 +61,43 @@ function ClassicMacarons() {
         ))}
       </div>
 
+      {/* фильтр по цене */}
+      <div className="classic-price-filter">
+        <div className="price-slider">
+          <span>Мин. сом{minPrice}</span>
+          <input
+            type="range"
+            min={minProductPrice}
+            max={maxProductPrice}
+            value={minPrice}
+            onChange={(e) => setMinPrice(Number(e.target.value))}
+          />
+        </div>
+        <div className="price-slider">
+          <span>Макс. сом{maxPrice}</span>
+          <input
+            type="range"
+            min={minProductPrice}
+            max={maxProductPrice}
+            value={maxPrice}
+            onChange={(e) => setMaxPrice(Number(e.target.value))}
+          />
+        </div>
+        <div className="price-line">
+          <div
+            className="price-range-highlight"
+            style={{
+              left: `${((minPrice - minProductPrice) / (maxProductPrice - minProductPrice)) * 100}%`,
+              right: `${100 - ((maxPrice - minProductPrice) / (maxProductPrice - minProductPrice)) * 100}%`,
+            }}
+          />
+        </div>
+      </div>
+
       {/* карточки */}
       <div className="classic-products">
         {filteredProducts.map((product) => (
-          <div key={product.id} className="classic-card">
-            <div className="classic-image">
-              <img
-                src={product.mainImage}
-                alt={product.title}
-              />
-            </div>
-            <div className="classic-content">
-              <h3 className="classic-title">{product.title}</h3>
-              <p className="classic-price">
-                {product.price} сом{" "}
-                {product.oldPrice && (
-                  <span className="classic-oldprice">{product.oldPrice} сом</span>
-                )}
-              </p>
-              {product.items && (
-                <p className="classic-count">
-                  {Object.values(product.items)[0]} шт.
-                </p>
-              )}
-              <button
-                className="classic-addcart"
-                onClick={() => addToCart(product)}
-              >
-                В корзину 🛒
-              </button>
-            </div>
-          </div>
+          <Card key={product.id} item={product} addToCart={() => addToCart(product)} />
         ))}
       </div>
     </div>

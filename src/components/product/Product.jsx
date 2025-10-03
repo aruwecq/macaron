@@ -1,89 +1,54 @@
-import React, { useEffect, useState } from 'react'
-import './product.scss'
-import { Link } from 'react-router-dom'
-import axios from 'axios'
-import ProductNews from './productNews/ProductNews'
+import React, { useEffect, useState } from "react";
+import "./product.scss";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import ProductNews from "./productNews/ProductNews";
+import { useCart } from "../cart/CartContext";
+import Card from "../card/Card";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Product() {
-  const [products, setProducts] = useState([])
+  const [products, setProducts] = useState([]);
+  const { addToCart } = useCart();
+  const [clickedButtons, setClickedButtons] = useState({});
 
   useEffect(() => {
-    axios.get('https://68ae8d71b91dfcdd62b979fb.mockapi.io/products')
-      .then((res) => {
-        setProducts(res.data)
-      })
-      .catch((err) => {
-        console.error("Ошибка при загрузке продуктов:", err)
-      })
-  }, [])
+    axios
+      .get("https://68ae8d71b91dfcdd62b979fb.mockapi.io/products")
+      .then((res) => setProducts(res.data))
+      .catch((err) => console.error("Ошибка при загрузке продуктов:", err));
+  }, []);
+
+  useEffect(() => {
+    AOS.init({ duration: 800, once: true, easing: "ease-out" });
+  }, []);
+
+  const handleAddToCart = (item) => {
+    addToCart(item);
+    setClickedButtons((prev) => ({ ...prev, [item.id]: true }));
+  };
 
   return (
-    // <div className="product-list">
-    //   <div className='h1'>  <h1>Популярные наборы</h1></div>
-    //   <div className='list'>
-    //   {products.slice(0,6 ).map((item) => (   // <-- ограничиваем до 6
-    //     <div key={item.id} className="product-card">
-    //       <div className="product-image">
-    //         <img src={item.mainImage || (item.images && item.images[0]) || "https://via.placeholder.com/370x250?text=Нет+фото"} alt={item.title} />
-    //       </div>
-
-    //       <div className="product-content">
-    //         <h3 className="product-title">{item.title}</h3>
-    //         <p className="product-desc">{item.description}</p>
-    //         <span>{item.descriptionShort}</span>
-    //       </div>
-
-    //       <div className="product-footer">
-    //         <span className="product-price">{item.price} сом</span>
-    //         <button className="product-btn">
-    //           <Link to="/" className="icon">🛒</Link> В корзину
-    //         </button>
-    //       </div>
-    //     </div>
-    //   ))}
-    //   <Link style={{background:"aqua", textDecoration:"none", width:"250px",
-    //     height:"50px" , textAlign:"center" , padding:"15px"
-    //   }} to="/holydays">Все праздничные наборы</Link>
-    //   <ProductNews/>
-    //   </div>
-    // </div>
     <div className="product-list">
-  <div className='h1'>
-    <h1>Популярные наборы</h1>
-  </div>
-
-  <div className='listt'>
-    {products.slice(0, 6).map((item) => (
-      <div key={item.id} className="productcard">
-        <div className="producttimage">
-          <img src={item.mainImage || (item.images && item.images[0]) || "https://via.placeholder.com/370x250?text=Нет+фото"} alt={item.title} />
-        </div>
-
-        <div className="product-content">
-          <h3 className="product-title">{item.title}</h3>
-          <p className="product-desc">{item.description}</p>
-          <span>{item.descriptionShort}</span>
-        </div>
-
-        <div className="product-footer">
-          <span className="product-price">{item.price} сом</span>
-          <button className="product-btn">
-            <Link to="/" className="icon">🛒</Link> В корзину.
-          </button>
-        </div>
+      <div className="h1">
+        <h1 data-aos="fade-up">Популярные наборы</h1>
       </div>
-    ))}
-  </div>
+      <div className="listt">
+        {products.slice(0, 6).map((item, index) => (
+          <div key={item.id} data-aos="fade-up" data-aos-delay={index * 100}>
+            <Card item={item} />
+          </div>
+        ))}
+      </div>
 
-  {/* Кнопка вынесена вниз */}
-  <div className="all-sets-btn">
-    <Link to="/holydays">Все праздничные наборы</Link>
-  </div>
+      <div className="all-sets-btn" data-aos="fade-up" data-aos-delay="700">
+        <Link to="/holydays">Все праздничные наборы</Link>
+      </div>
 
-  <ProductNews/>
-</div>
-
-  )
+      <ProductNews />
+    </div>
+  );
 }
 
-export default Product
+export default Product;

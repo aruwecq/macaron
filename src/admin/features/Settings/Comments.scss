@@ -1,0 +1,130 @@
+@import "../../shared/components/styles/variables.scss";
+
+.comments-page {
+  padding: $spacing-8;
+  font-family: $font-primary;
+  //   background: $gray-100;
+  min-height: 100vh;
+
+  h1 {
+    font-size: $font-size-3xl;
+    margin-bottom: $spacing-6;
+    background: $accent-pink;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.comments-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: $spacing-6;
+}
+
+.comment-card {
+  background: $gradient-card;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+  padding: $spacing-5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform $transition-normal, box-shadow $transition-normal;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-lg;
+  }
+
+  .comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      font-size: $font-size-lg;
+      color: $gray-900;
+      margin: 0;
+    }
+
+    span {
+      font-size: $font-size-sm;
+      color: $gray-600;
+    }
+  }
+
+  .comment-body {
+    margin: $spacing-4 0;
+    font-size: $font-size-base;
+    color: $gray-700;
+    line-height: 1.5;
+  }
+  .btns-div{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .delete-btn {
+    align-self: flex-end;
+    padding: $spacing-2 $spacing-4;
+    font-size: $font-size-sm;
+    border-radius: $radius-md;
+    background: $error;
+    color: $white;
+    border: none;
+    cursor: pointer;
+    transition: background $transition-fast;
+
+    &:hover {
+      background: darken($error, 10%);
+    }
+  }
+  .edit-btn {
+    align-self: flex-end;
+    padding: $spacing-2 $spacing-4;
+    font-size: $font-size-sm;
+    border-radius: $radius-md;
+    color: $white;
+    border: none;
+    cursor: pointer;
+    transition: background $transition-fast, transform $transition-fast;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+
+    &.active-comment {
+      background: $success; // зелёная кнопка для активных
+      box-shadow: $shadow-sm;
+
+      &:hover {
+        background: darken($success, 8%);
+        box-shadow: $shadow-md;
+      }
+    }
+
+    &.notactive-comment {
+      background: $warning; // жёлтая для неактивных
+      box-shadow: $shadow-sm;
+
+      &:hover {
+        background: darken($warning, 8%);
+        box-shadow: $shadow-md;
+      }
+    }
+  }
+}
+.comment-rating {
+  display: flex;
+  gap: 5px;
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+.comment-rating .star {
+  color: #ccc; // пустая звезда
+}
+
+.comment-rating .star.filled {
+  color: #ffb400; // заполненная золотая звезда
+}

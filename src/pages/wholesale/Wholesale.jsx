@@ -8,6 +8,7 @@ import kartoshka from "../../assets/images/kartoshka1.png"
 import macaroni from "../../assets/images/macaroni.png"
 import oreshki from "../../assets/images/oreshki.png"
 import trubochki from "../../assets/images/trubochki.png"
+import documentPdf from "../../assets/katalog__.pdf"
 // import trubochki from "../../assets/images/macaroni.png"
 
 
@@ -26,8 +27,6 @@ function Wholesale() {
     <div className='wholesale'>
         <div className='wholesale-all'>
             <div className='wholesale-logo'>
-
-      <span> <Link to="">Главная страница</Link> Десерты для кофеен и кафе </span>
             </div>
       <div className="optom1">
         <div className="optom1-img">
@@ -43,7 +42,16 @@ function Wholesale() {
             натуральные, позволяют делать высокую наценку, за ними <br /> 
             возвращаются покупатели.
             </p>
-            <button >Скачать каталог</button>
+            <button 
+            onClick={
+              ()=>{
+                const link = document.createElement('a');
+                link.href = documentPdf;
+                link.download = 'macaron_shop_catalog.pdf';
+                link.click();
+              }
+            }
+            >Скачать весь каталог</button>
         </div>
       </div>
       </div>

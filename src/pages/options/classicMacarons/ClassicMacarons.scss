@@ -20,7 +20,8 @@
     font-size: 15px;
     cursor: pointer;
     transition: all 0.3s ease;
-
+    background-color: #edebeb;
+    color: #000;
     &:hover {
       background: #eee;
     }
@@ -175,5 +176,25 @@
 
   &:hover {
     background: #e63673;
+  }
+}
+.classic-price-filter {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+
+  input {
+    width: 120px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+
+    &:focus {
+      outline: none;
+      border-color: #ff4b8d;
+      box-shadow: 0 0 6px rgba(255, 75, 141, 0.3);
+    }
   }
 }

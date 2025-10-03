@@ -1,45 +1,139 @@
+// .happy {
+//   width: 1000px;
+//   height: 250px;
+//   margin: 30px auto;
+//   text-align: center;
+
+//   a {
+//     text-decoration: none;
+//   }
+
+//   h1 {
+//     color: var(--text-color);
+//     margin-bottom: 20px;
+//   }
+
+//   .images {
+//     position: relative;
+//     display: flex;
+//     align-items: flex-start;
+//     justify-content: center;
+//     gap: 60px;
+
+//     .holiday-line {
+//       position: absolute;
+//       margin-top: 60px;
+//       width: 900px;
+//       border: 1px dashed var(--accent-color);
+//       opacity: 0.6;
+//     }
+
+//     .holiday-block {
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       margin-top: 30px;
+
+//       .holiday-item,
+//       .holiday-base {
+//         width: 90px;
+//         height: auto;
+//         background: var(--card-bg); /* фон кружка зависит от темы */
+//         border-radius: 50%;
+//         transition: transform 0.3s ease, background 0.3s;
+//         position: relative;
+
+//         &:hover {
+//           transform: scale(1.1);
+//           background: var(--accent-hover);
+//         }
+//       }
+
+//       .holiday-with-cape {
+//         position: relative;
+
+//         .holiday-cape {
+//           position: absolute;
+//           top: -43px;
+//           left: 30px;
+//           width: 60px;
+//           z-index: 2;
+//         }
+//       }
+
+//       .holiday-text {
+//         margin-top: 12px;
+//         font-size: 14px;
+//         line-height: 1.3;
+//         color: var(--text-color); /* текст по теме */
+
+//         span {
+//           font-weight: bold;
+//           color: var(--accent-color); /* дата/акцент */
+//         }
+//       }
+//     }
+//   }
+// }
 .happy {
-    width: 1000px;
-    height: 250px;
-    box-sizing: border-box;
+  width: 100%;
+  max-width: 1000px;
+  height: 250px;
   margin: 30px auto;
   text-align: center;
-//   border: 1px solid red;
-  a{
+
+  @media (max-width: 995px) {
+    height: auto;
+    margin-bottom: 50px;
+  }
+
+  a {
     text-decoration: none;
   }
+
+  h1 {
+    color: var(--text-color);
+    margin-bottom: 20px;
+  }
+
   .images {
     position: relative;
     display: flex;
     align-items: flex-start;
     justify-content: center;
     gap: 60px;
+    width: 100%;
 
     .holiday-line {
       position: absolute;
       margin-top: 60px;
       width: 900px;
-      border: 1px dashed #d35400;
+      border: 1px dashed var(--accent-color);
+      opacity: 0.6;
+
+      @media (max-width: 860px) {
+        width: 476px;
+      }
     }
 
     .holiday-block {
       display: flex;
       flex-direction: column;
       align-items: center;
-      
       margin-top: 30px;
 
       .holiday-item,
       .holiday-base {
         width: 90px;
         height: auto;
-        background: #fff;
+        background: var(--card-bg);
         border-radius: 50%;
-        transition: transform 0.3s ease;
+        transition: transform 0.3s ease, background 0.3s;
         position: relative;
 
         &:hover {
           transform: scale(1.1);
+          background: var(--accent-hover);
         }
       }
 
@@ -55,18 +149,73 @@
         }
       }
 
-      /* подписи */
       .holiday-text {
         margin-top: 12px;
         font-size: 14px;
         line-height: 1.3;
-        color: #333;
+        color: var(--text-color);
 
         span {
           font-weight: bold;
-          color: #d35400;
+          color: var(--accent-color);
         }
       }
+    }
+  }
+
+  /* Адаптив без изменения структуры и размеров по умолчанию */
+  @media (max-width: 1200px) {
+    .happy {
+      width: 95%;
+    }
+    .images {
+      gap: 50px;
+    }
+    .holiday-line {
+      width: 800px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .images {
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .holiday-block {
+      margin-top: 25px;
+    }
+    .holiday-line {
+      width: 600px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .images {
+      gap: 30px;
+    }
+    .holiday-block {
+      margin-top: 20px;
+    }
+    .holiday-line {
+      width: 500px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .happy {
+      width: 100%;
+      height: auto;
+      padding: 0 10px;
+    }
+    .images {
+      gap: 20px;
+    }
+    .holiday-block {
+      margin-top: 15px;
+    }
+    .holiday-line {
+      display: none;
     }
   }
 }

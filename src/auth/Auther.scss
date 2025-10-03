@@ -1,0 +1,254 @@
+.auther {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "Poppins", sans-serif;
+
+  @media (max-width: 1440px) {
+    max-width: 1000px;
+    padding: 20px;
+  }
+
+  @media (max-width: 1024px) {
+    gap: 20px;
+  }
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 15px;
+    gap: 15px;
+  }
+}
+
+.left-panel {
+  width: 500px;
+  height: 300px;
+  background: linear-gradient(135deg, #ffe6eb, #fff0f5); 
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+  position: sticky;
+  top: 200px;
+
+  @media (max-width: 1200px) {
+    width: 400px;
+  }
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    position: relative;
+    top: 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: 15px;
+    border-radius: 16px;
+  }
+}
+
+.right-panel {
+  flex: 1;
+  background: linear-gradient(135deg, #ffe6eb, #fff0f5); 
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+
+  @media (max-width: 480px) {
+    padding: 15px;
+    border-radius: 16px;
+  }
+}
+
+.left-panel h2,
+.right-panel h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ff4da6;
+  margin-bottom: 18px;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 18px;
+  }
+}
+
+.left-panel h3,
+.right-panel h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 12px 0;
+  color: #333;
+
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
+}
+
+input,
+.auther-select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #333;
+  transition: box-shadow 0.2s;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255,77,166,0.3);
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+}
+.address-row {
+  display: flex;
+  gap: 10px;
+  input {
+    flex: 1;
+  }
+
+  @media (max-width: 1024px) {
+    gap: 8px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 10px;
+
+    input {
+      width: 100%;
+    }
+  }
+}
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #333;
+  transition: box-shadow 0.2s;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255,77,166,0.3);
+  }
+}
+
+
+.order-list {
+  max-height: 220px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+.order-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 10px 15px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #222;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+}
+
+.order-summary {
+  margin-top: 15px;
+
+  .order-row {
+    background: transparent;
+    padding: 6px 0;
+    font-size: 15px;
+  }
+
+  .total {
+    font-weight: 700;
+    font-size: 18px;
+    color: #ff1aa6;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 15px;
+    }
+  }
+}
+
+.finish-btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  background: linear-gradient(90deg, #ff4da6, #ef77c1);
+  transition: transform 0.2s, opacity 0.2s;
+
+  &:hover {
+    transform: translateY(-2px);
+    opacity: 0.95;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+.promo input {
+  border-radius: 12px;
+
+  @media (max-width: 480px) {
+    font-size: 13px;
+    padding: 10px;
+  }
+}

@@ -2,96 +2,109 @@
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
+//   background: linear-gradient(135deg, #fff0f6, #ffe6f0);.
+  border-radius: 16px;
 }
 
-/* Кнопки фильтров */
 .hbirthday-buttons {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 
   .hbirthday-btn {
-    padding: 10px 18px;
-    border: 1px solid #ccc;
+    padding: 10px 20px;
+    border: 2px solid transparent;
     border-radius: 25px;
-    background: #f8f8f8;
+    // background: #fff;   
+    background-color: #edebeb;
+    color: #000;
     font-size: 15px;
     cursor: pointer;
+    font-weight: 500;
     transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
 
     &:hover {
-      background: #eee;
+      background: #ffe6ef;
+      border-color: #ff4b8d;
+      color: #ff4b8d;
     }
 
     &.active {
-      background: #ff4081;
+      background: linear-gradient(90deg, #ff4b8d, #ff006e);
       color: #fff;
-      border-color: #ff4081;
+      border-color: #ff006e;
+      box-shadow: 0 4px 10px rgba(255, 75, 141, 0.4);
     }
   }
 }
 
 /* Карточки товаров */
 .hbirthday-products {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+//   display: grid;
+//   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+//   gap: 22px;
+display: flex;
+flex-wrap: wrap;
+margin: 0 auto;
+gap: 40px;
 }
 
 .hbirthday-card {
+ width: 340px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 280px;
+  flex-wrap: wrap;
+//   flex-direction: column;
+  gap: 20px;
   background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+    box-shadow: 0 10px 22px rgba(255, 64, 129, 0.25);
   }
 
   .hbirthday-image {
     width: 100%;
-    height: 200px;
+    height: 210px;
     overflow: hidden;
 
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.3s ease;
+      transition: transform 0.4s ease;
 
       &:hover {
-        transform: scale(1.05);
+        transform: scale(1.08);
       }
     }
   }
 
   .hbirthday-content {
-    padding: 15px;
-
+    padding: 16px;
+  
     .hbirthday-title {
       font-size: 18px;
       font-weight: 600;
-      margin-bottom: 10px;
-      color: #333;
+      margin-bottom: 8px;
+      color: #222;
     }
 
     .hbirthday-price {
       font-size: 16px;
       font-weight: bold;
-      color: #222;
+      color: #ff006e;
 
       .hbirthday-oldprice {
         margin-left: 10px;
         font-size: 14px;
-        color: #888;
+        color: #999;
         text-decoration: line-through;
       }
     }
@@ -104,25 +117,43 @@
   }
 }
 
-/* Адаптивка */
-@media (max-width: 1024px) {
-  .hbirthday-card {
-    width: 45%;
+/* Кнопка корзины */
+.hbirthday-addcart {
+  margin-top: 14px;
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #ff4b8d, #ff006e);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(90deg, #e63673, #d60055);
+    box-shadow: 0 4px 12px rgba(255, 64, 129, 0.4);
+    transform: translateY(-2px);
+  }
+
+  &.added {
+    background: #4caf50; // зелёный
+    cursor: default;
+    box-shadow: none;
+    transform: none;
   }
 }
 
-@media (max-width: 768px) {
+/* ================== Адаптивка ================== */
+@media (max-width: 1024px) {
   .hbirthday-buttons {
-    gap: 8px;
+    gap: 10px;
 
     .hbirthday-btn {
-      padding: 8px 14px;
+      padding: 9px 16px;
       font-size: 14px;
     }
-  }
-
-  .hbirthday-card {
-    width: 100%;
   }
 
   .hbirthday-content .hbirthday-title {
@@ -130,18 +161,22 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .hbirthday-wrapper {
-    padding: 10px;
+    padding: 15px;
   }
 
-  .hbirthday-card {
-    width: 100%;
-    border-radius: 8px;
+  .hbirthday-buttons {
+    gap: 8px;
+
+    .hbirthday-btn {
+      padding: 8px 14px;
+      font-size: 13px;
+    }
   }
 
-  .hbirthday-content {
-    padding: 10px;
+  .hbirthday-card .hbirthday-content {
+    padding: 12px;
 
     .hbirthday-title {
       font-size: 15px;
@@ -159,21 +194,57 @@
       font-size: 12px;
     }
   }
+
+  .hbirthday-addcart {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
 }
 
-.hbirthday-addcart {
-  margin-top: 12px;
-  width: 100%;
-  padding: 10px 16px;
-  border: none;
-  border-radius: 8px;
-  background: #ff4081;
-  color: #fff;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
+@media (max-width: 480px) {
+  .hbirthday-wrapper {
+    padding: 10px;
+  }
 
-  &:hover {
-    background: #e63673;
+  .hbirthday-buttons {
+    flex-direction: column;
+    align-items: center;
+
+    .hbirthday-btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  .hbirthday-card {
+    border-radius: 10px;
+  }
+
+  .hbirthday-card .hbirthday-content {
+    padding: 10px;
+
+    .hbirthday-title {
+      font-size: 14px;
+    }
+  }
+}
+.hbirthday-price-filter {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+
+  input {
+    width: 120px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+
+    &:focus {
+      outline: none;
+      border-color: #ff4b8d;
+      box-shadow: 0 0 6px rgba(255, 75, 141, 0.3);
+    }
   }
 }

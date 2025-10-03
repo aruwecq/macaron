@@ -6,8 +6,9 @@ import {
   Users, 
   Settings,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
 } from 'lucide-react';
+import { FaCommentDots } from "react-icons/fa";
 import './Sidebar.scss';
 
 interface SidebarProps {
@@ -22,7 +23,7 @@ const menuItems = [
   { id: 'products', label: 'Продукты', icon: Package, emoji: '🍬' },
   { id: 'orders', label: 'Заказы', icon: ShoppingCart, emoji: '🛒' },
   { id: 'users', label: 'Пользователи', icon: Users, emoji: '👥' },
-  { id: 'settings', label: 'Настройки', icon: Settings, emoji: '⚙️' },
+  { id: 'comments', label: 'Комментарии', icon: FaCommentDots, emoji: '💬' },
 ];
 
 const Sidebar: React.FC<SidebarProps> = ({

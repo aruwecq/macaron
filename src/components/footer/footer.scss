@@ -5,7 +5,8 @@
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  margin-top: 90px;
+  margin-top: 100px;
+
   .footer-all {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -31,21 +32,21 @@
 
       p {
         font-size: 14px;
-        color: #333;
+        color: var(--love-color);
       }
     }
   }
-    .footer-sslk{
-        margin-left: 50px;
-    }
+
   .footer-sslk,
   .footer-sslk1,
   .footer-sslk2,
   .footer-sslk3 {
     margin-left: 70px;
+
     h2 {
       font-size: 16px;
       margin-bottom: 10px;
+      color: var(--footer-h2);
     }
 
     ul {
@@ -56,11 +57,29 @@
         margin-bottom: 6px;
 
         a {
-          color: #333;
+          position: relative;
+          color: var(--love-color);
           text-decoration: none;
+          padding-bottom: 3px;
+          transition: color 0.3s ease;
+
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #f05b67;
+            transition: width 0.3s ease;
+          }
 
           &:hover {
             color: #d64c7f;
+          }
+
+          &:hover::after {
+            width: 100%;
           }
         }
       }
@@ -77,21 +96,63 @@
       display: flex;
       gap: 10px;
     }
+
+    a {
+      position: relative;
+      text-decoration: none;
+      color: var(--love-color);
+      padding-bottom: 2px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #f05b67;
+        transition: width 0.3s ease;
+      }
+
+      &:hover {
+        color: #d64c7f;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
   }
 
   .footer-icons {
     display: flex;
     gap: 15px;
-    width: 40px;
     margin-top: 20px;
 
     a {
       font-size: 20px;
-      color: #000;
+      color: var(--love-color);
+
+      // ❌ Убираем линию под иконками
+      &::after {
+        display: none !important;
+      }
 
       &:hover {
         color: #d64c7f;
       }
     }
+  }
+}
+
+[data-theme="dark"] {
+  .footer {
+    background: linear-gradient(
+      90deg,
+      rgb(112, 107, 107) 0%,
+      rgba(40, 40, 40, 1) 25%,
+      rgb(126, 126, 126) 50%,
+      rgba(60, 59, 59, 0.858) 100%
+    );
   }
 }
