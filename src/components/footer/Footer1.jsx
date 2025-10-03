@@ -155,6 +155,7 @@ function Footer1() {
 
   return (
     <footer className="footer">
+      <div className="footer1">
       <div className="footer-all">
         <div className="footer-img">
           <div className="footer-item">
@@ -220,6 +221,7 @@ function Footer1() {
             <a href="https://wa.me/557071920" target="_blank" rel="noreferrer"><FaWhatsapp /></a>
           </div>
         </div>
+      </div>
       </div>
     </footer>
   );
