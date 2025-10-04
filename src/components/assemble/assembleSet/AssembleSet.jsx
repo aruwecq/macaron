@@ -1,6 +1,7 @@
 import React from "react";
 import "./AssembleSet.scss";
 import { Link, useParams, Routes, Route } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 export const products = [
   {
     id: 1,
@@ -60,6 +61,7 @@ export const products = [
   },
 ];
 function AssembleSet() {
+    const { t } = useTranslation();
   const getCountFromTitle = (title) => {
     const match = title.match(/\d+/);
     return match ? match[0] : "unknown";
@@ -68,8 +70,8 @@ function AssembleSet() {
   return (
     <div className="set">
       <div className="link">
-        <Link to="/">Главная страница</Link> »<p className="title-set">Собери свой набор макаронс</p>
-      </div>
+  <Link to="/">{t("assembleSet.breadcrumbHome")}</Link> »
+        <p className="title-set">{t("assembleSet.title")}</p>      </div>
 
       <div className="products">
         {products.map((p) => (  

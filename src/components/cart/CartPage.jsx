@@ -15,6 +15,8 @@ function CartPage() {
   const totalDelivery = deliveryBase * totalCount;
   const total = subtotal + totalDelivery;
 
+  console.log(cart);
+
   if (cart.length === 0) {
     return (
       <div className="cartEmpty">
@@ -37,13 +39,24 @@ function CartPage() {
               <div className="cartRow">
                 <img
                   className="cartItemImg"
-                  src={item.mainImage || item.image}
+                  src={item.mainImage || item.image || item.img}
                   alt={item.title}
                 />
                 <div className="cartItemMain">
                   <div className="cartItemHead">
                     <div>
-                      <p className="cartItemTitle">{item.title}</p>
+                      {item.type === "sobrat-nabor" ? (
+                        <div className="cartItemTitle">
+                          <h4>Nabor iz</h4>
+                          {item.items.map((item, index) => (
+                            <>
+                            <span key={index}>{item.count} {item.name}</span> <br />
+                            </>
+                          ))}
+                        </div>
+                      ) : (
+                        <p className="cartItemTitle">{item.title}</p>
+                      )}
                       <p className="cartItemSub">{item.price} сом</p>
                     </div>
                     <div className="cartItemTotal">

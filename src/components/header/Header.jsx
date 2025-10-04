@@ -7,14 +7,20 @@ import home from "../../assets/images/home.svg";
 import { useCart } from "../cart/CartContext";
 import "./Header.scss";
 import BurgerMenu from "./ui/BurgerMenu";
-import { useTranslation} from 'react-i18next';
+import { useTranslation } from "react-i18next";
+
 function Header() {
-  const { totalCount } = useCart(); // количество товаров в корзине
+  const { totalCount } = useCart();
   const [menuOpen, setMenuOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
-  const {t, i18n}= useTranslation()
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+    localStorage.setItem("lng", lng);
+  };
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -39,90 +45,108 @@ function Header() {
 
   return (
     <>
-     <header className={`header-landing ${theme}`}>
-   <div className="utility">
-    <div className="row">
-      <div className="utility-left">
-        <Link to="/guarantee">Гарантия свежести</Link>
-        <Link to="/delivery">Доставка и оплата</Link>
-        <Link to="/otzyv">Отзывы</Link>
-        <Link to="/wholesale">Оптовые поставки</Link>
-        <Link to="/contacts">Контакты</Link>
-        <Link to="/city" className="city">
-          {/* Бишкек <IoLocationOutline className="icon" /> */}
-        </Link>
-        <div className="phone">
-          <IoIosPhonePortrait /> <p>557 07 19 20</p>
+      <header className={`header-landing ${theme}`}>
+        <div className="utility">
+          <div className="row">
+            <div className="utility-left">
+              <Link to="/guarantee">{t("header.guarantee")}</Link>
+              <Link to="/delivery">{t("header.delivery_payment")}</Link>
+              <Link to="/otzyv">{t("header.reviews")}</Link>
+              <Link to="/wholesale">{t("header.wholesale")}</Link>
+              <Link to="/contacts">{t("header.contacts")}</Link>
+
+              <Link to="/city" className="city">
+                {/* {t("city")} <IoLocationOutline className="icon" /> */}
+              </Link>
+
+              <div className="phone">
+                <IoIosPhonePortrait /> <p>557 07 19 20</p>
+              </div>
+
+              <div className="icons">
+                <Link
+                  className={`icon-btn ${
+                    totalCount > 0 || isCartPage ? "has-items" : ""
+                  }`}
+                  to="/cart"
+                >
+                  <LiaShoppingBagSolid />
+                  {totalCount > 0 && <span className="qty">{totalCount}</span>}
+                </Link>
+                {user.role !== "client" && (
+                  <Link to="/log-in" className="icon-btn">
+                    <FiUser />
+                  </Link>
+                )}
+                <button onClick={toggleTheme} className="theme-toggle-btn">
+                  {theme === "light" ? "🌞" : "🌜"}
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="icons">
-          <Link
-            className={`icon-btn ${totalCount > 0 || isCartPage ? "has-items" : ""}`}
-            to="/cart"
-          >
-            <LiaShoppingBagSolid />
-            {totalCount > 0 && <span className="qty">{totalCount}</span>}
-          </Link>
-          {user.role !== "client" && (
-            <Link to="/log-in" className="icon-btn">
-              <FiUser />
+
+        <div className={`main-nav ${menuOpen ? "open" : ""}`}>
+          <div className="row">
+            {/* Навигация слева */}
+            <nav className={`menu-left ${menuOpen ? "open" : ""}`}>
+              <Link className="menu-link" to="/discount">
+                {t("header.discount_days")} <span className="badge">%</span>
+              </Link>
+
+         <select className="menu-select" onChange={handleChange} defaultValue="">
+  <option value="">{t("header.gift_sets")}</option>
+  <option value="/holydays">{t("header.ready_sets")}</option>
+  <option value="/september1">{t("header.september1")}</option>
+  <option value="/happyBirthday">{t("header.happy_birthday")}</option>
+  <option value="/classicMacarons">{t("header.classic_macarons")}</option>
+  <option value="/gift">{t("header.wedding_offers")}</option>
+  <option value="/gifts/other">{t("header.corporate_gifts")}</option>
+</select>
+
+
+              <Link className="menu-link" to="/set">
+                {t("header.assemble_set")}
+              </Link>
+            </nav>
+
+            <Link className="logo" to="/">
+              <img className="logo-mark" src={home} alt="" />
             </Link>
-          )}
-          <button onClick={toggleTheme} className="theme-toggle-btn">
-            {theme === "light" ? "🌞" : "🌜"}
-          </button>
+
+            <nav className={`menu-right ${menuOpen ? "open" : ""}`}>
+              <Link className="menu-link" to="/design">
+                {t("header.design_set")}
+              </Link>
+
+           <select className="menu-select1">
+  <option value="">{t("header.for_business")}</option>
+  <option value="/companies/gifts">{t("header.corporate_gifts")}</option>
+  <option value="/companies/eclairs">{t("header.eclairs_wholesale")}</option>
+</select>
+
+<select className="menu-select1">
+  <option value="">{t("header.whole_catalog")}</option>
+  <option value="/catalog/macarons">{t("header.macaronss")}</option>
+  <option value="/catalog/eclairs">{t("header.eclairs")}</option>
+  <option value="/catalog/waffle-rolls">{t("header.waffle_rolls")}</option>
+  <option value="/catalog/cake-pops">{t("header.cake_pops")}</option>
+  <option value="/catalog/kartoshka">{t("header.potato_dessert")}</option>
+</select>
+
+            </nav>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <div className={`main-nav ${menuOpen ? "open" : ""}`}>
-    <div className="row">
-      {/* Навигация слева */}
-      <nav className={`menu-left ${menuOpen ? "open" : ""}`}>
-        <Link className="menu-link" to="/discount">
-          Сладкие дни <span className="badge">%</span>
-        </Link>
-        <select className="menu-select" onChange={handleChange} defaultValue="">
-          <option value="">Подарочные наборы</option>
-          <option value="/holydays">Все наборы</option>
-          <option value="/september1">1 сентября</option>
-          <option value="/happyBirthday">День рождения</option>
-          <option value="/classicMacarons">Макаронс классические</option>
-          <option value="/gift">Свадебные предложения</option>
-          <option value="/gifts/other">Корпоративные подарки</option>
-        </select>
-        <Link className="menu-link" to="/set">Собрать набор</Link>
-      </nav>
-
-      <Link className="logo" to="/">
-        <img className="logo-mark" src={home} alt="" />
-      </Link>
-
-      <nav className={`menu-right ${menuOpen ? "open" : ""}`}>
-        <Link className="menu-link" to="/design">Создать дизайн</Link>
-        <select className="menu-select1">
-          <option value="">Компаниям</option>
-          <option value="/companies/gifts">Корпоративные подарки</option>
-          <option value="/companies/gifts">Эклеры Оптом</option>
-        </select>
-        <select className="menu-select1">
-          <option value="">Весь каталог</option>
-          <option value="/catalog/macarons">Макаронс</option>
-          <option value="/catalog/sets">Эклеры</option>
-          <option value="/catalog/other">Вафельные трубочки</option>
-          <option value="/catalog/other">Кейк попсы</option>
-          <option value="/catalog/other">Десерт картошка</option>
-        </select>
-      </nav>
-    </div>
-  </div>
-</header>
-
+      </header>
 
       {darkMode && (
         <div className="dark-overlay" onClick={() => setDarkMode(false)}></div>
       )}
-      <BurgerMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} toogleTheme={toggleTheme}/>
+      <BurgerMenu
+        menuOpen={menuOpen}
+        setMenuOpen={setMenuOpen}
+        toogleTheme={toggleTheme}
+      />
     </>
   );
 }

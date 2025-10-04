@@ -116,7 +116,14 @@
       color: $error;
     }
   }
-  
+      .deleete{
+      background: rgba(237, 80, 80, 0.167);
+
+      &:hover {
+        background: $error;
+        color: $white;
+      }
+    }
   .action-btn {
     display: flex;
     align-items: center;
@@ -127,7 +134,7 @@
     border-radius: $radius-md;
     cursor: pointer;
     transition: all $transition-normal;
-    
+
     &.view {
       background: rgba(59, 130, 246, 0.1);
       color: $info;

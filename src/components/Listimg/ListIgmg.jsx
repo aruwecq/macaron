@@ -2,15 +2,18 @@ import React, { useEffect } from 'react';
 import './ListIgmg.scss';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
+import { useTranslation } from 'react-i18next';
 function ListIgmg() {
+    const { t } = useTranslation();
+
   useEffect(() => {
     AOS.init({ duration: 800, once: true, easing: 'ease-out' });
   }, []);
 
+  const items = t("listimg.items", { returnObjects: true });
   return (
     <div className='listimg'>
-      <h1 data-aos="fade-up">Мы обо всём позаботились</h1>
+      <h1 data-aos="fade-up">{t("listimg.title")}</h1>
       <div className='cont'>
         {[
           {

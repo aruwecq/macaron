@@ -261,7 +261,7 @@
 // export default Orders;
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Eye, Edit } from "lucide-react";
+import { Eye, Edit, Trash } from "lucide-react";
 import Card from "../../shared/components/Card/Card";
 import Modal from "../../shared/components/Card/Input/Modal/Modal";
 import Button from "../../shared/components/Button/Button";
@@ -351,6 +351,17 @@ const Orders: React.FC = () => {
       console.error("Ошибка при обновлении заказа:", err);
     }
   };
+
+  const deleteOrder = async (id: string) => {
+    // if (!selectedOrder) return;
+    try {
+      await axios.delete(`${API_URL}/${id}`);
+      setOrders((prev) => prev.filter((o) => o.id !== id));
+      closeModal();
+    } catch (err) {
+      console.error("Ошибка при удалении заказа:", err);
+    }
+  }
 
   const renderOrderDetails = () => {
     if (!selectedOrder) return null;
@@ -473,6 +484,9 @@ const Orders: React.FC = () => {
                     title="Редактировать заказ"
                   >
                     <Edit size={16} />
+                  </button>
+                  <button className="action-btn deleete" onClick={() => deleteOrder(order.id)} title="Удалить заказ">
+                    <Trash size={16} />
                   </button>
                 </div>
               </div>

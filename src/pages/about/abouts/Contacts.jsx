@@ -1,32 +1,38 @@
 import React from "react";
 import "../styles/Contacts.scss";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 function Contacts() {
+  const { t } = useTranslation();
+
   return (
     <div className="contacts">
       <div className="contacts__container">
+        {/* Изображение */}
         <div className="contacts__image">
           <img
             src="https://msk.macaronshop.ru/wp-content/uploads/2021/06/location.png"
-            alt="Contacts"
+            alt={t("contact.title")}
           />
         </div>
 
+        {/* Контент */}
         <div className="contacts__content">
-          <h1>Контакты</h1>
-          <p>Свяжитесь с нами удобным для вас способом:</p>
+          <h1>{t("contact.title")}</h1>
+          <p>{t("contact.description")}</p>
 
-          <h2>Телефон:</h2>
-          <p>+996 557 07 19 20 </p>
+          <h2>{t("contact.phoneTitle")}</h2>
+          <p>{t("contact.phone")}</p>
 
-          <h2>Email:</h2>
-          <p>info@macaronshop.kg</p>
+          <h2>{t("contact.emailTitle")}</h2>
+          <p>{t("contact.email")}</p>
 
-          <h2>Адрес:</h2>
-          <p>г. Бишкек, ул. Сладкая, д. 10</p>
+          <h2>{t("contact.addressTitle")}</h2>
+          <p>{t("contact.address")}</p>
 
-          <h2>Режим работы:</h2>
-          <p>Ежедневно с 10:00 до 22:00</p>
+          <h2>{t("contact.workingHoursTitle")}</h2>
+          <p>{t("contact.workingHours")}</p>
         </div>
       </div>
     </div>
