@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "../styles/otzyv.scss";
+import "../styles/Otzyv.scss";
 import { useTranslation } from "react-i18next";
 
 function Otzyv() {
