@@ -1,50 +1,33 @@
 import React from "react";
 import "../styles/Guarantee.scss";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 function Guarantee() {
+  const { t } = useTranslation();
+
+  // Получаем массив элементов
+  const items = t("guaranties.items", { returnObjects: true });
+
   return (
     <div className="garantia">
       <div className="link-g">
-        <Link to="/">Главная страница</Link> »<p>Гарантии вкуса и качества</p>
+        <Link to="/">{t("guaranties.breadcrumbHome")}</Link> »
+        <p>{t("guaranties.breadcrumbPage")}</p>
       </div>
+
       <div className="g-title">
-        <h2>Гарантии</h2>
-        <span>
-          При изготовлении пирожных макаронс и других десертов мы используем
-          только натуральные ингредиенты и красители, готовя наши изделия по
-          оригинальной рецептуре лучших мировых кондитеров. Мы печём заказы в
-          день отгрузки, поэтому вы всегда можете быть уверены в их свежести. Мы
-          не используем консерванты, разрыхлители или усилители вкуса.
-        </span>
+        <h2>{t("guaranties.title")}</h2>
+        <span>{t("guaranties.description")}</span>
       </div>
+
       <div className="cont">
-        <div className="cont1">
-          <img
-            src="https://macaronshop.ru/wp-content/uploads/2021/06/almond.jpg"
-            alt=""
-          />
-          <h3>
-            100% <br />
-            миндальная мука
-          </h3>
-        </div>
-        <div className="cont1">
-          <img
-            src="https://macaronshop.ru/wp-content/uploads/2021/06/food-color.jpg"
-            alt=""
-          />
-          <h3>
-            100% <br />
-            натуральные красители
-          </h3>
-        </div>
-        <div className="cont1">
-          <img src="https://macaronshop.ru/wp-content/uploads/2021/06/fruits.jpg" alt="" />
-          <h3>
-            100% <br />
-            натуральные ингредиенты
-          </h3>
-        </div>
+        {items.map((item, index) => (
+          <div className="cont1" key={index}>
+            <img src={item.img || ""} alt={item.imgAlt || ""} />
+            <h3>{item.title}</h3>
+          </div>
+        ))}
       </div>
     </div>
   );

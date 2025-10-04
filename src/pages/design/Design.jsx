@@ -13,7 +13,6 @@ function Design() {
     <div className='design'>
       <div className="design-all">
         <div className='wholesale-logo'>
-      <span> <Link to="">Главная страница</Link> Печенье с логотипом на заказ </span>
              <h2>Выберите количество</h2>
         </div>
         <div className='design1'>
@@ -55,10 +54,8 @@ function Design() {
                     </p>
                 </div>
         </div>
-        {/* ушул жерге жазып беер */}
 
 
-{/* ушул жерге жазып беер */}
 <div className="design-info">
   <h2>Хотите удивить и порадовать? Закажите печенье с логотипом в Macaronshop!</h2>
   <p>

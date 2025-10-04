@@ -1,21 +1,16 @@
 import React from "react";
 import "../styles/About.scss";
+import { useTranslation } from "react-i18next";
 
 function About() {
+  const { t } = useTranslation();
+
   return (
     <div className="about">
       <div className="about__container">
         <div className="about__content">
-          <h1>О нас</h1>
-          <p>
-            Компания МакаронШоп основана в 2013 году. Мы — первый производитель
-            пирожных макаронс в Бишкеке. Изначально мы развивали только
-            один продукт — французские пирожные. А позже начали производить ещё
-            вафельные трубочки, орешки, профитроли и эклеры. Сейчас мы поставляем
-            нашу продукцию в крупнейшие кофейные и кондитерские сети Петербурга, а
-            также кафе и рестораны. У нас можно заказать все виды пирожных оптом
-            или запросить розничный прайс.
-          </p>
+          <h1>{t("abouts.title")}</h1>
+          <p>{t("abouts.text")}</p>
         </div>
 
         <div className="about__images">

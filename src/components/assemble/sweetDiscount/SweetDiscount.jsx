@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import "./SweetDiscount.scss";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { useCart } from "../../cart/CartContext"; // ✅ подключаем корзину
+import { useCart } from "../../cart/CartContext"; 
+import { useTranslation } from "react-i18next";
 
 function SweetDiscount() {
   const [discounts, setDiscounts] = useState([]);
-  const { addToCart } = useCart(); // ✅ функция корзины
-  const [clickedButtons, setClickedButtons] = useState({}); // ✅ состояния нажатых кнопок
+  const { addToCart } = useCart();
+  const [clickedButtons, setClickedButtons] = useState({});
+  const { t } = useTranslation();
 
   useEffect(() => {
     axios
@@ -25,19 +27,16 @@ function SweetDiscount() {
 
   return (
     <div className="sweet-discount">
-      {/* хлебные крошки */}
       <div className="link">
-        <Link to="/">Главная страница</Link> »
-        <p> Сладкие дни</p>
+        <Link to="/">{t("sweetDiscount.breadcrumbs.home")}</Link> » 
+        <p> {t("sweetDiscount.breadcrumbs.discount")}</p>
       </div>
 
-      {/* заголовки акции */}
       <div className="sweet-header">
-        <h1>Акция: сладкие дни!</h1>
-        <h3>Неделя скидок на авторские и подарочные наборы макарон</h3>
+        <h1>{t("sweetDiscount.header.title")}</h1>
+        <h3>{t("sweetDiscount.header.subtitle")}</h3>
       </div>
 
-      {/* карточки акций */}
       <div className="sweet-cards">
         {discounts.map((item) => (
           <div key={item.id} className="sweet-card">
@@ -59,13 +58,17 @@ function SweetDiscount() {
             </div>
 
             <div className="sweet-footer">
-              <span className="sweet-price">{item.price} сом</span>
+              <span className="sweet-price">
+                {t("sweetDiscount.price", { value: item.price })}
+              </span>
               <button
                 className={`sweet-btn ${clickedButtons[item.id] ? "active" : ""}`}
                 onClick={() => handleAddToCart(item)}
                 disabled={clickedButtons[item.id]}
               >
-                {clickedButtons[item.id] ? "Добавлен ✅" : "В корзину 🛒"}
+                {clickedButtons[item.id]
+                  ? t("sweetDiscount.button.added")
+                  : t("sweetDiscount.button.add")}
               </button>
             </div>
           </div>

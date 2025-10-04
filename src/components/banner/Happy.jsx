@@ -10,8 +10,11 @@ import hp6 from '../../assets/images/hp6.svg'
 import { Link } from 'react-router-dom'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import { useTranslation } from 'react-i18next'
 
 function Happy() {
+  const { t } = useTranslation()
+
   useEffect(() => {
     AOS.init({ duration: 800, once: true, easing: 'ease-out' })
   }, [])
@@ -19,7 +22,7 @@ function Happy() {
   return (
     <div className="happy">
       <div className="happy-link">
-        <h1>Ближайшие праздники</h1>
+        <h1>{t("happy.title")}</h1>
         <div className="images">
           <div className="holiday-line"></div>
 
@@ -29,48 +32,48 @@ function Happy() {
               <img src={cape} alt="cape" className="holiday-cape" />
             </div>
             <p className="holiday-text">
-              <span>Скоро</span><br />
-              День рождения близкого человека
+              <span>{t("happy.birthday.date")}</span><br />
+              {t("happy.birthday.text")}
             </p>
           </Link>
 
           <div className="holiday-block" data-aos="fade-up" data-aos-delay="200">
             <img src={hp2} alt="holiday 2" className="holiday-item" />
             <p className="holiday-text">
-              <span>1 января</span><br />
-              Новый год 2025
+              <span>{t("happy.new_year.date")}</span><br />
+              {t("happy.new_year.text")}
             </p>
           </div>
 
           <div className="holiday-block" data-aos="fade-up" data-aos-delay="300">
             <img src={hp3} alt="holiday 3" className="holiday-item" />
             <p className="holiday-text">
-              <span>14 февраля</span><br />
-              День святого Валентина
+              <span>{t("happy.valentine.date")}</span><br />
+              {t("happy.valentine.text")}
             </p>
           </div>
 
           <div className="holiday-block" data-aos="fade-up" data-aos-delay="400">
             <img src={hp4} alt="holiday 4" className="holiday-item" />
             <p className="holiday-text">
-              <span>23 февраля</span><br />
-              День Защитника Отечества
+              <span>{t("happy.defender.date")}</span><br />
+              {t("happy.defender.text")}
             </p>
           </div>
 
           <div className="holiday-block" data-aos="fade-up" data-aos-delay="500">
             <img src={hp5} alt="holiday 5" className="holiday-item" />
             <p className="holiday-text">
-              <span>8 марта</span><br />
-              Международный женский день
+              <span>{t("happy.women.date")}</span><br />
+              {t("happy.women.text")}
             </p>
           </div>
 
           <div className="holiday-block" data-aos="fade-up" data-aos-delay="600">
             <img src={hp6} alt="holiday 6" className="holiday-item" />
             <p className="holiday-text">
-              <span>9 мая</span><br />
-              День Победы
+              <span>{t("happy.victory.date")}</span><br />
+              {t("happy.victory.text")}
             </p>
           </div>
         </div>

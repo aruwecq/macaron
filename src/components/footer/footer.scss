@@ -6,19 +6,22 @@
   // max-width: 1440px;
   margin: 0 auto;
   margin-top: 100px;
-  .footer1{
-     background: #f8f8f8;
-  // padding: 50px 20px;
-  font-family: "Montserrat", sans-serif;
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  margin-top: 100px;
+  .footer1 {
+    background: #f8f8f8;
+    // padding: 50px 20px;
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    margin-top: 100px;
   }
   .footer-all {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 30px;
+    // padding: 30px;
+    margin-top: -100px;
+    // background-color: var(--footer);
   }
 
   .footer-img {
@@ -141,7 +144,6 @@
       font-size: 20px;
       color: var(--love-color);
 
-      // ❌ Убираем линию под иконками
       &::after {
         display: none !important;
       }
@@ -155,12 +157,10 @@
 
 [data-theme="dark"] {
   .footer {
-    background: linear-gradient(
-      90deg,
-      rgb(112, 107, 107) 0%,
-      rgba(40, 40, 40, 1) 25%,
-      rgb(126, 126, 126) 50%,
-      rgba(60, 59, 59, 0.858) 100%
-    );
+    background-color: #333 !important;
+    .footer-all,
+    .footer-all * {
+      background-color: #333 !important;
+    }
   }
 }

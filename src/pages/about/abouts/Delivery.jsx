@@ -1,39 +1,43 @@
 import React from "react";
 import "../styles/Delivery.scss";
+import { useTranslation } from "react-i18next";
 
 function Delivery() {
+  const { t } = useTranslation();
+
+  // Получаем массив пунктов доставки и интервалов
+  const cityItems = t("del.cityDeliveryItems", { returnObjects: true });
+  const intervalItems = t("del.intervalsItems", { returnObjects: true });
+
   return (
     <div className="delivery">
       <div className="delivery__container">
         <div className="delivery__image">
           <img
             src="https://msk.macaronshop.ru/wp-content/uploads/2021/06/vehicle.png"
-            alt="Delivery bike"
+            alt={t("del.imgAlt")}
           />
         </div>
 
         <div className="delivery__content">
-          <h1>Доставка и оплата</h1>
-          <p>Курьеры работают ежедневно с 10 до 22.</p>
+          <h1>{t("del.title")}</h1>
+          <p>{t("del.courierInfo")}</p>
 
-          <h2>Доставка по всему городу:</h2>
+          <h2>{t("del.cityDeliveryTitle")}</h2>
           <ul>
-            <li>от 3000сом до 5000сом — стоимость доставки 5000сом</li>
-            <li>от 5000сом — бесплатно</li>
+            {cityItems.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
           </ul>
 
-          <h2>Интервалы доставки:</h2>
+          <h2>{t("del.intervalsTitle")}</h2>
           <ul>
-            <li>с 10.00 до 14.00</li>
-            <li>с 14.00 до 17.00</li>
-            <li>после 17.00 до 22.00</li>
-            <li>
-              по Москве доставка через день после оформления заказа
-            </li>
+            {intervalItems.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
           </ul>
-          <p className="delivery__note">
-            Курьер предупредит о своём прибытии за 30-40 минут.
-          </p>
+
+          <p className="delivery__note">{t("del.note")}</p>
         </div>
       </div>
     </div>

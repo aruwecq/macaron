@@ -7,11 +7,13 @@ import { useCart } from "../cart/CartContext";
 import Card from "../card/Card";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useTranslation } from "react-i18next";
 
 function Product() {
   const [products, setProducts] = useState([]);
   const { addToCart } = useCart();
   const [clickedButtons, setClickedButtons] = useState({});
+  const { t } = useTranslation();
 
   useEffect(() => {
     axios
@@ -32,7 +34,7 @@ function Product() {
   return (
     <div className="product-list">
       <div className="h1">
-        <h1 data-aos="fade-up">Популярные наборы</h1>
+        <h1 data-aos="fade-up">{t("product.title")}</h1>
       </div>
       <div className="listt">
         {products.slice(0, 6).map((item, index) => (
@@ -43,7 +45,7 @@ function Product() {
       </div>
 
       <div className="all-sets-btn" data-aos="fade-up" data-aos-delay="700">
-        <Link to="/holydays">Все праздничные наборы</Link>
+        <Link to="/holydays">{t("product.allSets")}</Link>
       </div>
 
       <ProductNews />

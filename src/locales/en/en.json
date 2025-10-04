@@ -16,5 +16,366 @@
   "corporate_gifts": "Corporate Gifts",
   "legal_entities": "For Legal Entities",
   "wholesale": "Wholesale",
-  "working_hours": "from 9:00 to 21:00"
+  "working_hours": "from 9:00 to 21:00",
+
+ "header": {
+  "guarantee": "Taste and Freshness Guarantee",
+  "delivery_payment": "Delivery and Payment",
+  "reviews": "Reviews",
+  "wholesale": "Wholesale",
+  "contacts": "Contacts",
+  "ready_sets": "Ready Sets",
+  "build_set": "Build Your Own Set",
+  "design_set": "Build Your Design",
+  "for_business": "For Business",
+  "corporate_gifts": "Corporate Gifts",
+  "catalog": "Catalog",
+  "discount_days": "Sweet Days",
+  "gift_sets": "Gift Sets",
+  "assemble_set": "Assemble a Set",
+  "macaron_shop": "Macaron Shop",
+  "whole_catalog": "Full Catalog",
+  "companies": "For Companies",
+  "september1": "September 1st",
+  "happy_birthday": "Birthday",
+  "classic_macarons": "Classic Macarons",
+  "wedding_offers": "Wedding Offers",
+  "eclairs_wholesale": "Eclairs (wholesale)",
+  "macaronss":"Macarons",
+  "eclairs": "Eclairs",
+  "waffle_rolls": "Waffle rolls",
+  "cake_pops": "Cake pops",
+  "potato_dessert": "Kartoshka dessert"
+ },
+
+ "banner": {
+  "title": "MACARONSHOP",
+  "since": "— since 2013",
+  "heading": "True Love",
+  "description": "Macarons and other desserts\nmade from natural ingredients, baked with love"
+},
+
+"cont": {
+  "ready": {
+    "title": "Ready-made sets",
+    "text": "Discounted ready-made sets. Choose a set for any occasion."
+  },
+  "custom": {
+    "title": "Build your own set",
+    "text": "Select the number of macarons and choose the flavors."
+  },
+  "design": {
+    "title": "Personalized printed set",
+    "text": "Create a macaron set with a unique design."
+  },
+  "wedding": {
+    "title": "Wedding offers",
+    "text": "Delicate macarons with various flavors to decorate your celebration."
+  },
+  "corporate": {
+    "title": "Corporate gifts",
+    "text": "From 85 RUB per piece with a unique design. A pleasant gift for colleagues and partners."
+  },
+  "wholesale": {
+    "title": "Wholesale supply",
+    "text": "Offers for cafes, hotels, etc. Cooperation and reviews."
+  },
+  "sales": {
+    "title": "Promotions",
+    "delivery": {
+      "badge": "Free delivery",
+      "text": "In St. Petersburg (within KAD) – from 3000 KGS\nIn Moscow – from 5000 KGS"
+    },
+    "choco": {
+      "badge": "New",
+      "text": "Chocolate pastry 'Kartoshka' based on sponge cake!"
+    },
+    "candy": {
+      "badge": "New",
+      "text": "Delicious candies\nmade from almond cookies and cream"
+    },
+    "caramel": {
+      "badge": "Sale",
+      "text": "Lollipops made from natural ingredients"
+    }
+  }
+},
+"happy": {
+  "title": "Upcoming holidays",
+  "birthday": {
+    "date": "Soon",
+    "text": "Birthday of a loved one"
+  },
+  "new_year": {
+    "date": "January 1",
+    "text": "New Year 2025"
+  },
+  "valentine": {
+    "date": "February 14",
+    "text": "Valentine's Day"
+  },
+  "defender": {
+    "date": "February 23",
+    "text": "Defender of the Fatherland Day"
+  },
+  "women": {
+    "date": "March 8",
+    "text": "International Women's Day"
+  },
+  "victory": {
+    "date": "May 9",
+    "text": "Victory Day"
+  }
+},
+ "product" :{
+      "title": "Popular sets",
+      "allSets": "All holiday sets"
+    },
+     "productNews": {
+      "title": "News",
+      "allNews": "All News"
+    },
+    
+  "listimg": {
+    "title": "We took care of everything",
+    "items": [
+      {
+        "title": "Best ingredients",
+        "text": "Something about top quality, best chefs, freshness, etc."
+      },
+      {
+        "title": "Packaging",
+        "text": "We designed packaging options to make our desserts the perfect gift for any occasion!"
+      },
+      {
+        "title": "Same-day delivery",
+        "text": "Courier delivery or pickup on the day of the order"
+      },
+      {
+        "title": "Anonymous delivery",
+        "text": "We can deliver your order as an anonymous gift. Will the recipient guess who it's from?"
+      }
+    ]
+  },
+
+  "sweetDiscount": {
+    "breadcrumbs": {
+      "home": "Home",
+      "discount": "Sweet Days"
+    },
+    "header": {
+      "title": "Promo: Sweet Days!",
+      "subtitle": "A week of discounts on signature and gift macaron sets"
+    },
+    "button": {
+      "add": "Add to cart 🛒",
+      "added": "Added ✅"
+    },
+    "price": "{{value}} KGS"
+  },
+   "card": {
+    "noName": "No name",
+    "price": "{{value}} KGS",
+    "button": {
+      "add": "Add to cart 🛒",
+      "added": "Added ✅"
+    }
+   },
+
+  "assembleSet": {
+    "breadcrumbHome": "Home",
+    "title": "Assemble your macarons set",
+    "backToSets": "← Back to sets"
+  },
+  "sobratNabor": {
+    "breadcrumbHome": "Home",
+    "breadcrumbCatalog": "Catalog sets",
+    "title": "Choose {{maxCount}} macarons",
+    "totalSelected": "{{selected}} of {{max}} pcs",
+    "nextBtn": "Next"
+  },
+    "modal": {
+    "done_title": "Done!",
+    "done_text": "A set of {{count}} macarons has been created and added to the cart.",
+    "to_home": "Go Home",
+    "to_cart": "Go to Cart",
+    "to_checkout": "Checkout"
+  },
+
+   "nabormacaron": {
+    "1": "Black currant",
+    "2": "Mango-passion fruit",
+    "3": "Chocolate-orange",
+    "4": "Salted caramel",
+    "5": "Pistachio",
+    "6": "Lavender Provence",
+    "7": "Mint",
+    "8": "Chocolate",
+    "9": "Spiced cherry",
+    "10": "Lemon",
+    "11": "Vanilla ice cream",
+    "13": "Hazelnut",
+    "14": "Bubble gum",
+    "15": "Refreshing cappuccino"
+  },
+  "guaranties": {
+    "breadcrumbHome": "Home",
+    "breadcrumbPage": "Taste and Quality Guarantees",
+    "title": "Guarantees",
+    "description": "When making macarons and other desserts, we use only natural ingredients and colorings, preparing our products according to the original recipes of the world's best confectioners. We bake orders on the day of shipment, so you can always be sure of their freshness. We do not use preservatives, leavening agents, or flavor enhancers.",
+    "items": [
+      {
+        "title": "100% Almond Flour",
+        "img": "https://macaronshop.ru/wp-content/uploads/2021/06/almond.jpg",
+        "imgAlt": "Almond Flour"
+      },
+      {
+        "title": "100% Natural Colorings",
+        "img": "https://macaronshop.ru/wp-content/uploads/2021/06/food-color.jpg",
+        "imgAlt": "Natural Colorings"
+      },
+      {
+        "title": "100% Natural Ingredients",
+        "img": "https://macaronshop.ru/wp-content/uploads/2021/06/fruits.jpg",
+        "imgAlt": "Natural Ingredients"
+      }
+    ]
+  },
+   "del": {
+    "title": "Delivery and Payment",
+    "courierInfo": "Couriers work daily from 10:00 to 22:00.",
+    "cityDeliveryTitle": "Delivery across the city:",
+    "cityDeliveryItems": [
+      "from 3000som to 5000som — delivery cost 5000som",
+      "from 5000som — free"
+    ],
+    "intervalsTitle": "Delivery intervals:",
+    "intervalsItems": [
+      "from 10:00 to 14:00",
+      "from 14:00 to 17:00",
+      "after 17:00 to 22:00",
+      "in Moscow delivery the day after the order is placed"
+    ],
+    "note": "The courier will notify you 30-40 minutes before arrival.",
+    "imgAlt": "Delivery bike"
+  },
+  
+  "otzyv": {
+    "pageTitle": "Customer Reviews",
+    "form": {
+      "name": "Your name",
+      "phone": "+7 (___) ___-__-__",
+      "idea": "Your review",
+      "submit": "Submit review",
+      "success": "✅ Review submitted!"
+    },
+    "loading": "Loading reviews...",
+    "empty": "No reviews yet"
+  },
+  
+  "wholesal": {
+    "optomImgAlt": "Desserts for coffee shops",
+    "optomTitle": "Desserts for coffee shops",
+    "optomSubtitle": "Special offer! Special delivery conditions across Kyrgyzstan.",
+    "readMore": "Read more",
+    "optomDescription": "Since 2013, we produce and supply desserts in bulk for coffee shops and cafes. Our desserts are sold in major confectionery chains in St. Petersburg. They are bright, natural, allow high markup, and customers keep coming back.",
+    "downloadCatalog": "Download full catalog",
+    "productsTitle": "Pastries for your coffee shop",
+    "productsPage1": [
+      {
+        "img": "../../assets/images/macarons1.png",
+        "alt": "French macarons",
+        "title": "French macarons",
+        "description": "22 amazing classic and signature flavors"
+      },
+      {
+        "img": "../../assets/images/macarons2.png",
+        "alt": "Eclairs",
+        "title": "Eclairs",
+        "description": "Flavors: peanut, vanilla, caramel, raspberry, currant, pistachio, chocolate"
+      },
+      {
+        "img": "../../assets/images/cake-pops.png",
+        "alt": "Cake pops",
+        "title": "Cake pops",
+        "description": "With almond flour: three colors"
+      },
+      {
+        "img": "../../assets/images/kartoshka1.png",
+        "alt": "Potato pastries",
+        "title": "Potato pastries",
+        "description": "With strawberry filling"
+      }
+    ],
+    "productsPage2": [
+      {
+        "img": "../../assets/images/oreshki.png",
+        "alt": "Nuts with condensed milk",
+        "title": "Nuts with condensed milk",
+        "description": "Scattered and individually packed"
+      },
+      {
+        "img": "../../assets/images/trubochki.png",
+        "alt": "Homemade rolls",
+        "title": "Homemade rolls",
+        "description": "With boiled condensed milk"
+      },
+      {
+        "img": "../../assets/images/macaroni.png",
+        "alt": "Branded macarons",
+        "title": "Branded macarons",
+        "description": "For your guests, colleagues, and partners"
+      }
+    ],
+    "featuresTitle": "Products from Macaronshop confectionery factory are:",
+    "features": [
+      {
+        "img": "https://macaronshop.ru/wp-content/uploads/2021/06/corporate.svg",
+        "alt": "Attractive appearance",
+        "text": "Attractive appearance"
+      },
+      {
+        "img": "https://macaronshop.ru/wp-content/uploads/2021/06/collection.svg",
+        "alt": "Bright show boxes",
+        "text": "Bright show boxes"
+      },
+      {
+        "img": "https://macaronshop.ru/wp-content/uploads/2021/06/mass.svg",
+        "alt": "High repeat purchase",
+        "text": "High repeat purchase"
+      },
+      {
+        "img": "https://macaronshop.ru/wp-content/uploads/2021/06/wedding.svg",
+        "alt": "Natural ingredients and wide flavor range",
+        "text": "Natural ingredients and wide flavor range"
+      }
+    ]
+  },
+
+  "contact": {
+    "breadcrumbHome": "Home",
+    "breadcrumbPage": "Contacts",
+    "title": "Contacts",
+    "description": "Contact us in the way that is convenient for you:",
+    "phoneTitle": "Phone:",
+    "phone": "+996 557 07 19 20",
+    "emailTitle": "Email:",
+    "email": "info@macaronshop.kg",
+    "addressTitle": "Address:",
+    "address": "Bishkek, Sladkaya St., 10",
+    "workingHoursTitle": "Working Hours:",
+    "workingHours": "Daily from 10:00 to 22:00"
+  },
+  
+  "abouts": {
+    "title": "About Us",
+    "text": "MacaronShop was founded in 2013. We are the first manufacturer of macarons in Bishkek. Initially, we focused on one product — French macarons. Later, we began producing wafer rolls, nut cookies, profiteroles, and eclairs. Today, we supply our products to major coffee and pastry chains in Bishkek, as well as cafes and restaurants. You can order all types of pastries wholesale or request a retail price list."
+  }
+
+
+
+
+
+
+
 }
