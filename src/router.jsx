@@ -16,7 +16,7 @@ import LoginPage from "./admin/features/pages/LoginPage/LoginPage";
 import HappyBirthday from "./pages/options/happyBirthday/HappyBirthday";
 import ClassicMacarons from "./pages/options/classicMacarons/ClassicMacarons";
 import Gallery from "./pages/design/style/Gallery";
-import Gift from "./pages/gift/gift";
+import Gift from "./pages/gift/Gift";
 import CartPage from "./components/cart/CartPage";
 import Otzyv from "./pages/about/abouts/Otzyv";
 import Guarantee from "./pages/about/abouts/Guarantee";
