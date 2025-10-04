@@ -6,7 +6,6 @@ import macaron5 from "../../assets/images/macarons5.jpg"
 import macaron6 from "../../assets/images/macarons6.png"
 import more from "../../assets/images/more.png"
 import bezimeni from "../../assets/images/bezimeni.png"
-import { Link } from 'react-router-dom'
 
 function Design() {
   return (
