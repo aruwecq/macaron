@@ -6,13 +6,10 @@ import Products from "./admin/features/Products/Products";
 import DashboardPage from "./admin/features/pages/DashboardPage/DashboardPage";
 import Holydays from "./pages/category/Holydays/Holydays";
 import Wholesale from "./pages/wholesale/Wholesale";
-// import ProductNews from "./components/product/productNews/ProductNews";
 import News from "./components/product/productNews/News";
 import AssembleSet from "./components/assemble/assembleSet/AssembleSet";
-// import { ImageOff } from "lucide-react";
 import SweetDiscount from "./components/assemble/sweetDiscount/SweetDiscount";
-// import Holydays from "./pages/category/Holydays/Holydays";
-import Design from "./pages/design/design";
+import Design from "./pages/design/Design";
 import SobratNabor from "./pages/Sobrat-Nabor/SobratNabor";
 import September1 from "./pages/options/september1/September1";
 import LoginPage from "./admin/features/pages/LoginPage/LoginPage";
@@ -21,7 +18,6 @@ import ClassicMacarons from "./pages/options/classicMacarons/ClassicMacarons";
 import Gallery from "./pages/design/style/Gallery";
 import Gift from "./pages/gift/gift";
 import CartPage from "./components/cart/CartPage";
-import Card from "./components/card/Card";
 import Otzyv from "./pages/about/abouts/Otzyv";
 import Guarantee from "./pages/about/abouts/Guarantee";
 import Auther from "./auth/Auther";
@@ -29,6 +25,7 @@ import Finalli from "./auth/Finalli";
 import Delivery from "./pages/about/abouts/Delivery";
 import Contacts from "./pages/about/abouts/Contacts";
 import About from "./pages/about/abouts/About";
+
 const myRouter = createBrowserRouter([
   {
     path: "/",
