@@ -237,7 +237,6 @@ import "./SobratNabor.scss";
 import { useTranslation } from "react-i18next";
 import { useCart } from "../../components/cart/CartContext";
 
-// Хук со списком макаронс и переводами
 const useMacarons = () => {
   const { t } = useTranslation();
 
@@ -376,9 +375,9 @@ function SobratNabor() {
             </ul>
 
             <div className="modal-buttons">
-              <button onClick={() => navigate("/")}>🏠 {t("modal.to_home")}</button>
-              <button onClick={() => navigate("/cart")}>🛒 {t("modal.to_cart")}</button>
-              <button onClick={() => navigate("/auther")}>✅ {t("modal.to_checkout")}</button>
+              <button onClick={() => navigate("/")}> {t("modal.to_home")}</button>
+              <button onClick={() => navigate("/cart")}>{t("modal.to_cart")}</button>
+              <button onClick={() => navigate("/auther")}>{t("modal.to_checkout")}</button>
             </div>
           </div>
         </div>

@@ -25,6 +25,9 @@
    --row-bg: #f7ebe5;
    --footer-h2: #000;
    --discolor:#444;
+   --design: #333;
+   --designh2:#222;
+   --designh2:#444;
 
 }
 
@@ -44,7 +47,10 @@
    --row-bg: #222;
     --footer-h2: #f8d1d1;
     --discolor:#f7f4f4;
-    
+    --design: #ffffff;
+     --designh2:#ffffff;
+      --designh2:#f4eaea;
+
 }
 
 body {

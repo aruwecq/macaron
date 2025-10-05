@@ -399,7 +399,7 @@
   "design": {
     "title": "Choose quantity",
     "sets": [
-      { "name": "Dessert set", "price": "3890 RUB" },
+      { "name": "set of 6 Dessert", "price": "3890 RUB" },
       { "name": "Heart set of 22 macarons", "price": "2500 RUB" },
       { "name": "Set of 40 macarons", "price": "4900 RUB" },
       { "name": "Set of 60 macarons", "price": "5900 RUB" },

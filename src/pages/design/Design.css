@@ -24,7 +24,7 @@
 }
 .page-design1{
     width: 250px;
-    height: 450px;
+    height: 380px;
     background-color: #E2E2E2;
     text-align: center;
     border: 1px solid red;
@@ -33,7 +33,7 @@
     width: 240px;
     height: 250px;
     margin-top: 20px;
-    object-fit: contain;
+    object-fit: cover;
 }
 .page-design1 h4{
 margin-top: 10px;
@@ -61,7 +61,8 @@ color: red;
     /* background-color: #E2E2E2; */
     border-radius: 10px;
     line-height: 1.6;
-    color: #333;
+    color: var(--design);
+    /* color: red; */
     font-size: 18px;
 }
 
@@ -69,13 +70,13 @@ color: red;
     font-size: 28px;
     text-align: center;
     margin-bottom: 20px;
-    color: #222;
+    color: var( --designh2);
 }
 
 .design-info h3 {
     font-size: 22px;
     margin: 30px 0 15px 0;
-    color: #444;
+    color: var(--designh3);
 }
 
 .design-info p {
@@ -96,8 +97,5 @@ color: red;
 
 .design-info li {
     margin-bottom: 10px;
-}
-
-.design-info strong {
-    color: black;
+    /* color: blueviolet; */
 }

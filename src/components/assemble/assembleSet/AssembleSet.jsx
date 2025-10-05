@@ -104,7 +104,7 @@ function ProductPage({ products }) {
       <img src={product.image} alt={product.title} />
       <h2>{product.title}</h2>
       {product.oldPrice && <span className="old">{product.oldPrice} руб</span>}
-      <p className="price">{product.price} руб</p>
+      <p className="price">{product.price} сом</p>
       <Link to="/assemble">← Назад к наборам</Link>
     </div>
   );

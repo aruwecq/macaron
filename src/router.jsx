@@ -56,7 +56,7 @@ const myRouter = createBrowserRouter([
         element: <Wholesale />,
       },
       {
-        path: "gallery",
+        path: "gallery/:count",
         element: <Gallery />,
       },
       {
