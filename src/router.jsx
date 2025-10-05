@@ -25,6 +25,12 @@ import Finalli from "./auth/Finalli";
 import Delivery from "./pages/about/abouts/Delivery";
 import Contacts from "./pages/about/abouts/Contacts";
 import About from "./pages/about/abouts/About";
+import Catalog from "./pages/options/catalog/Catalog";
+import EclairsPage from "./pages/options/eclairs/EclairsPage";
+import WafflePage from "./pages/options/WafflePage/WafflePage";
+import ComboPage from "./pages/options/comboPage/ComboPage";
+import MacaronPage from "./pages/options/macaron/MacaronPage";
+import CorGifts from "./pages/options/Cor-gifts/CorGifts";
 
 const myRouter = createBrowserRouter([
   {
@@ -74,7 +80,7 @@ const myRouter = createBrowserRouter([
         element: <September1 />,
       },
       {
-        path: "happyBirthday/:id",
+        path: "happyBirthday",
         element: <HappyBirthday />,
       },
       {
@@ -111,9 +117,29 @@ const myRouter = createBrowserRouter([
         path: "/contacts",
         element: <Contacts/>,
       }, 
-  {
+     {
         path: "/about",
         element: <About/>,
+      }, {
+        path: "/catalog",
+        element: <Catalog/>,
+      }, 
+     {
+        path: "/eclairs",
+        element: <EclairsPage/>,
+      },    {
+        path: "/waffle",
+        element: <WafflePage/>,
+      }, 
+   {
+        path: "/combo",
+        element: <ComboPage/>,
+      }, {
+        path: "/macaron",
+        element: <MacaronPage/>,
+      },  {
+        path: "/corgifts",
+        element: <CorGifts/>,
       }, 
 
     ],

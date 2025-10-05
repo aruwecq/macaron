@@ -275,7 +275,7 @@
   
   "wholesal": {
     "optomImgAlt": "Desserts for coffee shops",
-    "optomTitle": "Desserts for coffee shops",
+    "optomTitle": "Eclairs wholesale",
     "optomSubtitle": "Special offer! Special delivery conditions across Kyrgyzstan.",
     "readMore": "Read more",
     "optomDescription": "Since 2013, we produce and supply desserts in bulk for coffee shops and cafes. Our desserts are sold in major confectionery chains in St. Petersburg. They are bright, natural, allow high markup, and customers keep coming back.",
@@ -370,7 +370,68 @@
   "abouts": {
     "title": "About Us",
     "text": "MacaronShop was founded in 2013. We are the first manufacturer of macarons in Bishkek. Initially, we focused on one product — French macarons. Later, we began producing wafer rolls, nut cookies, profiteroles, and eclairs. Today, we supply our products to major coffee and pastry chains in Bishkek, as well as cafes and restaurants. You can order all types of pastries wholesale or request a retail price list."
+  },
+  "holydays":{
+  "breadcrumbHome": "Home page",
+  "breadcrumbCatalog": "Dessert catalog",
+  "breadcrumbReadySets": "Ready-made sets",
+  "title": "Gift sets",
+  "subtitle": "For the sweet moments of your life",
+  "birthday": "Birthday",
+  "september1": "September 1",
+  "classicMacarons": "Classic macarons",
+  "wedding": "Wedding sets",
+  "boss": "Gifts for the boss",
+  "teachers": "For teachers",
+  "colleagues": "Gifts for colleagues"
+},
+  "corgift": {
+    "title": "Corporate gifts wholesale and retail",
+    "description": "Branded macarons and eclairs are the best gifts for colleagues and partners. We prepare pastries from 70 rubles each or in sets from 350 rubles, create custom designs, and apply your logo.",
+    "download": "Download full catalog",
+    "subtitle": "Branded pastries — the best gift for:",
+    "option1": "Colleagues",
+    "option2": "Employees",
+    "option3": "Clients",
+    "option4": "Family and friends"
+
+},
+  "design": {
+    "title": "Choose quantity",
+    "sets": [
+      { "name": "Dessert set", "price": "3890 RUB" },
+      { "name": "Heart set of 22 macarons", "price": "2500 RUB" },
+      { "name": "Set of 40 macarons", "price": "4900 RUB" },
+      { "name": "Set of 60 macarons", "price": "5900 RUB" },
+      { "name": "Set of 9 macarons", "price": "890 RUB" },
+      { "name": "Set of 12 macarons", "price": "1290 RUB" }
+    ],
+    "infoTitle": "Want to surprise and delight? Order logo macarons from Macaronshop!",
+    "infoText": "A delicious treat that melts in your mouth and also serves as an original souvenir – these are our logo macarons from Macaronshop! We print your logo on the famous French macarons, turning them into sweet works of art.",
+    "whyTitle": "Why choose logo macarons?",
+    "reasons": {
+      "gift": "Unique and memorable gift:",
+      "private": "For private customers: Surprise your loved ones, friends, or colleagues with an original and delicious gift for any celebration.",
+      "b2b": "For b2b clients: Order branded logo macarons for promotions, presentations, or corporate events.",
+      "universal": "Versatility: printing can be applied to any macaron.",
+      "easy": "Easy to order: choose the number of macarons (9 to 70), upload your logo, and select the flavor and color."
+    },
+    "howTitle": "How to order:",
+    "steps": [
+      "Choose the layout with the desired number of macarons",
+      "Upload your logo or design",
+      "Select flavor and color",
+      "Add to cart and place your order"
+    ],
+    "examplesTitle": "Examples of use:",
+    "examples": [
+      "As a gift for clients",
+      "For advertising campaigns",
+      "As gifts for employees"
+    ]
   }
+
+
 
 
 

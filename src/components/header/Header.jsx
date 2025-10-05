@@ -94,16 +94,25 @@ function Header() {
                 {t("header.discount_days")} <span className="badge">%</span>
               </Link>
 
-         <select className="menu-select" onChange={handleChange} defaultValue="">
-  <option value="">{t("header.gift_sets")}</option>
-  <option value="/holydays">{t("header.ready_sets")}</option>
-  <option value="/september1">{t("header.september1")}</option>
-  <option value="/happyBirthday">{t("header.happy_birthday")}</option>
-  <option value="/classicMacarons">{t("header.classic_macarons")}</option>
-  <option value="/gift">{t("header.wedding_offers")}</option>
-  <option value="/gifts/other">{t("header.corporate_gifts")}</option>
-</select>
-
+              <select
+                className="menu-select"
+                onChange={handleChange}
+                defaultValue=""
+              >
+                <option value="">{t("header.gift_sets")}</option>
+                <option value="/holydays">{t("header.ready_sets")}</option>
+                <option value="/september1">{t("header.september1")}</option>
+                <option value="/happyBirthday">
+                  {t("header.happy_birthday")}
+                </option>
+                <option value="/classicMacarons">
+                  {t("header.classic_macarons")}
+                </option>
+                <option value="/gift">{t("header.wedding_offers")}</option>
+                <option value="/gifts/other">
+                  {t("header.corporate_gifts")}
+                </option>
+              </select>
 
               <Link className="menu-link" to="/set">
                 {t("header.assemble_set")}
@@ -119,21 +128,30 @@ function Header() {
                 {t("header.design_set")}
               </Link>
 
-           <select className="menu-select1">
-  <option value="">{t("header.for_business")}</option>
-  <option value="/companies/gifts">{t("header.corporate_gifts")}</option>
-  <option value="/companies/eclairs">{t("header.eclairs_wholesale")}</option>
-</select>
-
-<select className="menu-select1">
-  <option value="">{t("header.whole_catalog")}</option>
-  <option value="/catalog/macarons">{t("header.macaronss")}</option>
-  <option value="/catalog/eclairs">{t("header.eclairs")}</option>
-  <option value="/catalog/waffle-rolls">{t("header.waffle_rolls")}</option>
-  <option value="/catalog/cake-pops">{t("header.cake_pops")}</option>
-  <option value="/catalog/kartoshka">{t("header.potato_dessert")}</option>
-</select>
-
+              <select
+                className="menu-select1"
+                onChange={handleChange}
+                defaultValue=""
+              >
+                <option value="">{t("header.for_business")}</option>
+                <option value="/corgifts">{t("header.corporate_gifts")}</option>
+                <option value="/wholesale">
+                  {t("header.eclairs_wholesale")}
+                </option>
+              </select>
+              <select
+                className="menu-select1"
+                onChange={handleChange}
+                defaultValue=""
+              >
+                <option value="">{t("header.whole_catalog")}</option>
+                <option value="/catalog">{t("header.hcatalog")}</option>
+                <option value="/macaron">{t("header.macaronss")}</option>
+                <option value="/eclairs">{t("header.eclairs")}</option>
+                <option value="/waffle">{t("header.waffle_rolls")}</option>
+                <option value="/combo">{t("header.cake_pops")}</option>
+                {/* <option value="/catalog/kartoshka">{t("header.potato_dessert")}</option> */}
+              </select>
             </nav>
           </div>
         </div>

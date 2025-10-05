@@ -1,8 +1,179 @@
+// import React, { useEffect, useState } from "react";
+// import wedding from "../../assets/images/wedding.png";
+// import "./gift.css";
+// import Card from "../../components/card/Card"; // ✅ добавили импорт карточки
+// import axios from "axios";
+// import { toast } from "react-toastify";
+
+// function Gift() {
+//   const [products, setProducts] = useState([]);
+//   const [formData, setFormData] = useState({
+//     name: "",
+//     phone: "",
+//     idea: "",
+//     rating: 0,
+//   });
+//   const [loading, setLoading] = useState(false);
+//   const [success, setSuccess] = useState(false);
+
+//   useEffect(() => {
+//     fetch("https://68ae8d71b91dfcdd62b979fb.mockapi.io/products")
+//       .then((res) => res.json())
+//       .then((data) => {
+//         const filtered = data.filter(
+//           (item) => item.forEvent === "Свадебные предложения"
+//         );
+//         setProducts(filtered);
+//       })
+//       .catch((err) => console.log(err));
+//   }, []);
+
+//   const handleChange = (e) => {
+//     const { name, value } = e.target;
+//     setFormData((prev) => ({ ...prev, [name]: value }));
+//   };
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     setLoading(true);
+
+//     try {
+//       await axios.post(
+//         "https://68da53f223ebc87faa2fbc11.mockapi.io/comment-macacron",
+//         formData
+//       );
+//       setSuccess(true);
+//       toast.success("Заявка успешно отправлена");
+//       setFormData({ name: "", phone: "", idea: "", rating: 0 });
+//     } catch (err) {
+//       console.error("Ошибка:", err);
+//       toast.error("Не удалось отправить заявку 😔");
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
+//   return (
+//     <div className="gift">
+//       {/* ==== 1. Жогорку блок ==== */}
+//       <div className="gift-all">
+//         <div className="gift-img">
+//           <img src={wedding} alt="wedding" />
+//         </div>
+//         <div className="text-gift">
+//           <h1>
+//             Оригинальные сладкие <br /> подарки на свадьбу
+//           </h1>
+//           <p>
+//             Нежные пирожные макаронс с разными вкусами для <br />
+//             украшения вашего свадебного торжества
+//           </p>
+
+//           <p>
+//             <strong>100% натурально</strong> <br />
+//             Только миндальная мука, фруктовое пюре, безопасные пищевые красители
+//           </p>
+//           <p>
+//             <strong>Удобно</strong> <br />
+//             Порционные угощения украсят и дополнят любой стол
+//           </p>
+//           <p>
+//             <strong>Быстро</strong> <br />
+//             Изготовим за 3 дня, доставим на мероприятие, собираем и сервируем
+//             стол
+//           </p>
+//           <button>Презентация</button>
+//         </div>
+//       </div>
+
+//       {/* ==== 2. Карточки свадебных наборов через компонент Card ==== */}
+//       <section className="wedding">
+//         <h2 className="wedding-title">Наборы для свадьбы</h2>
+//         <div className="wedding-list">
+//           {products.map((product) => (
+//             <Card key={product.id} item={product} />
+//           ))}
+//         </div>
+//       </section>
+
+//       <section className="idea">
+//         <div className="idea-container">
+//           <div className="idea-left"></div>
+//           <div className="idea-right">
+//             <h2>Мы открыты, чтобы вы могли написать свои отзывы и идеи</h2>
+//             <p>
+//               Каждое событие уникально, и мы готовы предложить индивидуальные
+//               решения для вашего мероприятия
+//             </p>
+
+//             <form className="idea-form" onSubmit={handleSubmit}>
+//               <div className="form-row">
+//                 <input
+//                   type="text"
+//                   name="name"
+//                   placeholder="Укажите имя"
+//                   value={formData.name}
+//                   onChange={handleChange}
+//                   required
+//                 />
+//                 <input
+//                   type="tel"
+//                   name="phone"
+//                   placeholder="+7 (___) ___-__-__"
+//                   value={formData.phone}
+//                   onChange={handleChange}
+//                   required
+//                 />
+//               </div>
+
+//               <textarea
+//                 name="idea"
+//                 placeholder="Опишите Вашу идею"
+//                 value={formData.idea}
+//                 onChange={handleChange}
+//               ></textarea>
+
+//               <div className="rating">
+//                 {[1, 2, 3, 4, 5].map((star) => (
+//                   <span
+//                     key={star}
+//                     className={formData.rating >= star ? "star filled" : "star"}
+//                     onClick={() =>
+//                       setFormData((prev) => ({ ...prev, rating: star }))
+//                     }
+//                   >
+//                     ★
+//                   </span>
+//                 ))}
+//               </div>
+
+//               <button type="submit" disabled={loading}>
+//                 {loading ? "Отправка..." : "Отправить заявку"}
+//               </button>
+
+//               {success && (
+//                 <p style={{ color: "green" }}>✅ Заявка успешно отправлена!</p>
+//               )}
+
+//               <small>
+//                 Нажимая на кнопку “Оформить заказ”, я принимаю условия
+//                 <a href="#"> Политики конфиденциальности</a>.
+//               </small>
+//             </form>
+//           </div>
+//         </div>
+//       </section>
+//     </div>
+//   );
+// }
+
+// export default Gift;
 import React, { useEffect, useState } from "react";
 import wedding from "../../assets/images/wedding.png";
 import "./gift.css";
-import { toast } from "react-toastify";
+import Card from "../../components/card/Card";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 function Gift() {
   const [products, setProducts] = useState([]);
@@ -10,10 +181,11 @@ function Gift() {
     name: "",
     phone: "",
     idea: "",
-    rating: 0, // рейтинг
+    rating: 0,
   });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [showPresentation, setShowPresentation] = useState(false); // ✅ состояние для модалки
 
   useEffect(() => {
     fetch("https://68ae8d71b91dfcdd62b979fb.mockapi.io/products")
@@ -22,14 +194,7 @@ function Gift() {
         const filtered = data.filter(
           (item) => item.forEvent === "Свадебные предложения"
         );
-        if (filtered.length > 0) {
-          const oneProduct = filtered[0];
-          const repeated = Array.from({ length: 9 }, (_, i) => ({
-            ...oneProduct,
-            id: `${oneProduct.id}-${i}`,
-          }));
-          setProducts(repeated);
-        }
+        setProducts(filtered);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -48,13 +213,12 @@ function Gift() {
         "https://68da53f223ebc87faa2fbc11.mockapi.io/comment-macacron",
         formData
       );
-
       setSuccess(true);
       toast.success("Заявка успешно отправлена");
       setFormData({ name: "", phone: "", idea: "", rating: 0 });
     } catch (err) {
       console.error("Ошибка:", err);
-      alert("Не удалось отправить заявку 😔");
+      toast.error("Не удалось отправить заявку 😔");
     } finally {
       setLoading(false);
     }
@@ -65,7 +229,7 @@ function Gift() {
       {/* ==== 1. Жогорку блок ==== */}
       <div className="gift-all">
         <div className="gift-img">
-          <img src={wedding} alt="" />
+          <img src={wedding} alt="wedding" />
         </div>
         <div className="text-gift">
           <h1>
@@ -89,60 +253,29 @@ function Gift() {
             Изготовим за 3 дня, доставим на мероприятие, собираем и сервируем
             стол
           </p>
-          <button>Презентация</button>
+          <button onClick={() => setShowPresentation(true)}>Презентация</button>
         </div>
       </div>
 
-      {/* ==== 2. Карточки свадебных наборов ==== */}
+      {/* ==== 2. Карточки ==== */}
       <section className="wedding">
         <h2 className="wedding-title">Наборы для свадьбы</h2>
         <div className="wedding-list">
           {products.map((product) => (
-            <div className="wedding-card" key={product.id}>
-              <div className="wedding-img">
-                <img src={product.mainImage} alt={product.title} />
-              </div>
-              <div className="wedding-info">
-                <h3>{product.title}</h3>
-                <p>{product.descriptionShort}</p>
-              </div>
-              <div className="wedding-bottom">
-                <span className="wedding-price">{product.price} руб</span>
-                <button className="wedding-btn">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="icon"
-                  >
-                    <path d="M6 6h15l-1.5 9h-13z"></path>
-                    <circle cx="9" cy="21" r="1"></circle>
-                    <circle cx="19" cy="21" r="1"></circle>
-                  </svg>
-                  Купить
-                </button>
-              </div>
-            </div>
+            <Card key={product.id} item={product} />
           ))}
         </div>
       </section>
 
-      {/* ==== 3. Форма для отзывов и идей ==== */}
+      {/* ==== 3. Форма ==== */}
       <section className="idea">
         <div className="idea-container">
           <div className="idea-left"></div>
           <div className="idea-right">
-            <h2>
-              Мы открыты, чтобы вы могли написать свои отзывы и идеи
-            </h2>
+            <h2>Мы открыты, чтобы вы могли написать свои отзывы и идеи</h2>
             <p>
-              Каждое событие уникально и мы готовы предложить индивидуальные
-              решения для Вашего мероприятия
+              Каждое событие уникально, и мы готовы предложить индивидуальные
+              решения для вашего мероприятия
             </p>
 
             <form className="idea-form" onSubmit={handleSubmit}>
@@ -172,7 +305,6 @@ function Gift() {
                 onChange={handleChange}
               ></textarea>
 
-              {/* Рейтинг */}
               <div className="rating">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <span
@@ -196,14 +328,73 @@ function Gift() {
               )}
 
               <small>
-                Нажимая на кнопку “Оформить заказ” Я принимаю и соглашаюсь с
-                Договором оферты и разрешаю обработку моих персональных данных в
-                соответствии с <a href="#">Политикой конфиденциальности</a>
+                Нажимая на кнопку “Оформить заказ”, я принимаю условия
+                <a href="#"> Политики конфиденциальности</a>.
               </small>
             </form>
           </div>
         </div>
       </section>
+
+      {/* ==== МОДАЛКА С ПРЕЗЕНТАЦИЕЙ ==== */}
+     {showPresentation && (
+  <div className="modal-overla" onClick={() => setShowPresentation(false)}>
+    <div
+      className="modal-content"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <button className="close-btn" onClick={() => setShowPresentation(false)}>
+        ✖
+      </button>
+
+      <h2> Презентация свадебных подарков</h2>
+      <p>
+        Мы создаем эксклюзивные сладкие наборы для вашего праздника — макаронс,
+        десерты и оформление в вашем стиле. Всё на 100% натуральное и с любовью 💕
+      </p>
+
+      <img
+        src={wedding}
+        alt="presentation"
+        className="presentation-img"
+      />
+
+      <p>
+        Наши подарочные наборы включают:
+        <ul>
+          <li> Классические макаронс — 10 вкусов;</li>
+          <li> Индивидуальное оформление в цветах свадьбы;</li>
+          <li> Мини-десерты и муссы с натуральными ингредиентами;</li>
+          <li>Упаковку с вашим логотипом или именами молодожёнов.</li>
+        </ul>
+      </p>
+<div className="gifftimg">
+      <img
+        src="https://balthazar.club/uploads/posts/2022-10/1666326037_3-balthazar-club-p-svadebnie-makaruni-krasivo-3.jpg"
+        alt="набор"
+        style={{
+          width: "300px",
+          height: "400px",
+          borderRadius: "12px",
+          margin: "20px 0"
+        }}
+      />
+
+      <p>
+        Мы также можем разработать уникальный дизайн и концепцию для вашего
+        торжества — от сладкого стола до индивидуальных подарков для гостей.
+      </p>
+</div>
+    
+
+      <p>
+        Свяжитесь с нами, чтобы обсудить идеи — мы с радостью сделаем ваш день
+        по-настоящему сладким 
+      </p>
+    </div>
+  </div>
+)}
+
     </div>
   );
 }
