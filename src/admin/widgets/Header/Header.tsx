@@ -46,7 +46,7 @@ const Header: React.FC<HeaderProps> = ({ onToggleSidebar }) => {
           </div>
           <div className="user-info">
             <span className="user-name">Администратор</span>
-            <span className="user-email">admin@admin.com</span>
+            <span className="user-email">aruuke@admin.com</span>
           </div>
         </div>
         
