@@ -41,7 +41,7 @@ function ListIgmg() {
             key={index}
             className='cont1'
             data-aos="fade-up"
-            data-aos-delay={index * 150} // задержка по очереди
+            data-aos-delay={index * 150} 
           >
             <img src={item.img} alt={item.title} />
             <h3>{item.title}</h3>

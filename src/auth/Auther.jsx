@@ -8,7 +8,7 @@ import "./Auther.scss";
 function Auther() {
   const navigate = useNavigate();
   const { addOrder } = useContext(OrdersContext);
-  const { cart } = useCart();
+  const { cart, clearCart } = useCart(); // ✅ добавили clearCart
 
   const [promo, setPromo] = useState("");
   const [phone, setPhone] = useState("");
@@ -42,9 +42,9 @@ function Auther() {
       await axios.post("https://68da53f223ebc87faa2fbc11.mockapi.io/shopping", order);
 
       addOrder(order);
+      clearCart(); // ✅ очищаем корзину после успешного заказа
 
-      // передаём заказ в Finalli
-      navigate("/finalli", { state: order });
+      navigate("/finalli", { state: order }); // ✅ переход на страницу подтверждения
     } catch (error) {
       console.error("Ошибка при отправке заказа:", error);
       alert("Не удалось отправить заказ. Попробуйте снова.");

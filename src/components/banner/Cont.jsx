@@ -5,7 +5,6 @@ import AOS from "aos"
 import "aos/dist/aos.css"
 import { useTranslation } from "react-i18next"
 
-// картинки
 import i1 from '../../assets/images/i1.svg'
 import i2 from '../../assets/images/i2.svg'
 import i3 from '../../assets/images/i3.svg'
@@ -23,7 +22,6 @@ function Cont() {
 
   return (
     <div className='list'>
-      {/* Блок категорий */}
       <div className='banner-cont'>
         <Link to="/holydays" className='cont1' data-aos="fade-up" data-aos-delay="100">
           <img src={i1} alt="" />
@@ -62,7 +60,6 @@ function Cont() {
         </Link>
       </div>
 
-      {/* Блок акций */}
       <div className='sale-section'>
         <h1 className='sale-title'>{t("cont.sales.title")}</h1>
         <div className='sale-list'>

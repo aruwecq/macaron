@@ -14,7 +14,7 @@ function BurgerMenuOverlay({ menuOpen, setMenuOpen, toogleTheme }) {
   const location = useLocation();
   const { totalCount } = useCart();
   const [openSection, setOpenSection] = useState(null);
-  const [theme, setTheme] = useState("light"); // светлая по умолчанию
+  const [theme, setTheme] = useState("light"); 
 
   const user = JSON.parse(localStorage.getItem("user")) || {};
 
@@ -25,7 +25,7 @@ function BurgerMenuOverlay({ menuOpen, setMenuOpen, toogleTheme }) {
   const handleThemeToggle = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
-    toogleTheme(newTheme); // если у тебя есть глобальный переключатель темы
+    toogleTheme(newTheme); 
   };
 
   const isCartPage = location.pathname === "/cart";
@@ -56,7 +56,6 @@ function BurgerMenuOverlay({ menuOpen, setMenuOpen, toogleTheme }) {
         className="burger-overlay"
         style={{ display: menuOpen ? "flex" : "none" }}
       >
-        {/* 🔹 Верхняя часть меню (header внутри бургера) */}
         <div className="burger-top">
           <div className="burger-icons">
             <button className="close-bttn" onClick={() => setMenuOpen(false)}>
@@ -79,7 +78,6 @@ function BurgerMenuOverlay({ menuOpen, setMenuOpen, toogleTheme }) {
           </div>
         </div>
 
-        {/* 🔹 Основная навигация */}
         <nav className="burger-nav">
           <Link
             to="/city"
@@ -146,7 +144,6 @@ function BurgerMenuOverlay({ menuOpen, setMenuOpen, toogleTheme }) {
           </Link>
           <hr />
 
-          {/* КОМПАНИЯМ */}
           <div className="menu-item" onClick={() => toggleSection("companies")}>
             КОМПАНИЯМ <span>{openSection === "companies" ? "▲" : "▼"}</span>
           </div>
@@ -162,7 +159,6 @@ function BurgerMenuOverlay({ menuOpen, setMenuOpen, toogleTheme }) {
           )}
           <hr />
 
-          {/* ВЕСЬ КАТАЛОГ */}
           <div className="menu-item" onClick={() => toggleSection("catalog")}>
             ВЕСЬ КАТАЛОГ <span>{openSection === "catalog" ? "▲" : "▼"}</span>
           </div>
